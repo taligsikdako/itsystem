@@ -1,0 +1,23 @@
+.bg-network-image {
+    background: url((http://intranetmsit.amberbase.eagleview.com/itsystem/assets/img/network_outage.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-login-image {
+    background: url(http://intranetmsit.amberbase.eagleview.com/itsystem/assets/img/login.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-asset-image {
+    background: url(http://intranetmsit.amberbase.eagleview.com/itsystem/assets/img/asset.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-network_update-image {
+    background: url((http://intranetmsit.amberbase.eagleview.com/itsystem/assets/img/network_update.jpg);
+    background-position: center;
+    background-size: cover;
+}
