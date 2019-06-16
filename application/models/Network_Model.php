@@ -49,7 +49,7 @@ class Network_Model extends  CI_Model
     function fetch_single_downtime($id)
     {
       $this->db->where('ID',$id);
-      $query = $this->db->get('networkdowntime');
+      $query = $this->db->get('network_chart');
       return $query;
     }
 
