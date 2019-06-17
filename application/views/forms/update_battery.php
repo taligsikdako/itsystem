@@ -4,7 +4,7 @@
     <div class="card o-hidden border-0 shadow-lg my-5">
       <div class="card-body p-0">
 
-        <?php echo form_open("msasset/update_battery_form_validation", array("id" => "form-battery-update", "class" => "form-horizontal")) ?>
+        <?php echo form_open("msasset/update_battery_form_validation", array( "class" => "form-horizontal")) ?>
         <div class="row">
           <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
           <div class="col-lg-7">
@@ -74,7 +74,7 @@
            <div class="form-group">
                 <input type="hidden" name="hidden_id" value="<?php echo $row->ID; ?>" />
                 <input type="submit" name="update" id="update" value="Update" class="btn btn-info" />
-                    <!-- <input type="submit" name="insert" id="insert" value="Update" class="btn btn-primary"> -->
+
            </div>
            <?php
                 }

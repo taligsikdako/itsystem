@@ -12,9 +12,11 @@ class Site extends CI_Controller
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		$this->load->library('encryption');
-		$this->load->model('User_Model');
+		$this->load->model('user_model');
 		$this->load->model('network_model');
 		$this->load->model('report_model');
+		$this->load->model('chart_model');
+
 
 	}
 		public function index()
@@ -88,11 +90,11 @@ class Site extends CI_Controller
 				// Report Get the total number of network outage
 				$Outage = $this->report_model->get_NumberOfOutage();
 				$data['totalOutage'] = $Outage[0]->no;
-
+				// Report Get the total number of network outage
+				$OutageGlobe = $this->report_model->get_NumberOfOutage_Globe();
+				$data['totalOutage_Globe'] = $OutageGlobe[0]->no;
 
 				// Report get the overall assets inserted in the database
-
-
 				$TotalKeyboard = $this->report_model->get_DeployedKeyboard(); //get_SpareKeyboard
 				$data['DeployedKeyboard'] = $TotalKeyboard[0]->no;
 				// get remaining spare mouse
@@ -120,20 +122,23 @@ class Site extends CI_Controller
 				$SMonitor = $this->report_model->get_SpareMonitor();
 				$data['SpareMonitor'] = $SMonitor[0]->no;
 
-
-
+			//
+			// $getData = $this->chart_model->get_data()->result();
+			$getData = $this->chart_model->get_data_pldt()->result();
+			$data['data'] = json_encode($getData);
+			//
 				$data['title'] = 'Welcome to Admin Dashboard';
 				$this->load->view('template/header');
 				$this->load->view('template/nav');
 				$this->load->view('dashboard/admin_dashboard',$data);
-				$this->load->view('template/footer');
+				$this->load->view('template/chart/footer');
 			}
 			elseif($this->session->userdata('user_roles') == 'User')
 			{
 				$data['title'] = 'Welcome to Users Dashboard';
 				$this->load->view('template/header');
 				$this->load->view('template/nav');
-				$this->load->view('user/dashboard',$data);
+				$this->load->view('dashboard/user_dashboard',$data);
 				$this->load->view('template/footer');
 			}
 			else {

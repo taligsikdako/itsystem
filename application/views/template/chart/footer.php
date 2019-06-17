@@ -102,33 +102,48 @@
 
 
 <!-- Bootstrap core JavaScript-->
-<script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
-<script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-<!-- Core plugin JavaScript-->
-<script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
+    <script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Custom scripts for all pages-->
-<script type='text/javascript' src="<?php echo base_url(); ?>assets/js/sb-admin-2.min.js"></script>
-  <!-- Datatables -->
-  <script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/datatables/jquery.datatables.min.js"></script>
-  <script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/datatables/datatables.bootstrap4.min.js"></script>
-    <!-- Data Tables -->
-    <script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/datatables/main.js"></script>
-  <!-- Custom Scripts -->
-  <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/demo/datatables-demo.js"></script>
-  <!-- Custom JS File -->
-  <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 
-<!-- Page level plugins -->
-<!-- <script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/chart.js/Chart.min.js"></script> -->
+    <!-- Core plugin JavaScript-->
+    <script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- Page level custom scripts -->
- <!-- <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/demo/chart-area-demo.js"></script> -->
-<!-- <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/demo/chart-pie-demo.js"></script> -->
+    <!-- Custom scripts for all pages-->
+    <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/sb-admin-2.min.js"></script>
+      <!-- Datatables -->
+      <script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/datatables/jquery.datatables.min.js"></script>
+      <script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/datatables/datatables.bootstrap4.min.js"></script>
+        <!-- Data Tables -->
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/datatables/main.js"></script>
+      <!-- Custom Scripts -->
+      <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/demo/datatables-demo.js"></script>
+      <!-- Custom JS File -->
+      <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 
+    <!-- Page level plugins -->
+    <script type='text/javascript' src="<?php echo base_url(); ?>assets/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+     <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/demo/chart-area-demo.js"></script>
+    <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/demo/chart-pie-demo.js"></script>
+    <script src="<?php echo base_url().'assets/js/jquery.min.js'?>"></script>
+    <script src="<?php echo base_url().'assets/js/raphael-min.js'?>"></script>
+    <script src="<?php echo base_url().'assets/js/morris.min.js'?>"></script>
 </body>
+
+<script>
+    Morris.Line({
+      element: 'graph',
+      data: <?php echo $data;?>,
+      xkey: 'DateStarted',
+      ykeys: ['ID','Outage'],
+      labels: ['ID','Hours']
+    });
+</script>
 
 <script type="text/javascript">
 $('#update-password').submit(function(e) {
@@ -182,58 +197,8 @@ else {
 });
 });
 
-$('#form-battery-update').submit(function(e) {
-e.preventDefault();
-var me = $(this);
-
-// perform ajax
-$.ajax({
-// url: me.attr('action'),
-url: '<?php echo base_url(); ?>msasset/update_battery_form_validation',
-type: 'post',
-data: me.serialize(),
-dataType: 'json',
-success: function(response) {
-if (response.success == true) {
-  // if success we would show message
-  // and also remove the error class
-  $('#the-message').append('<div class="alert alert-success">' +
-    '<span class="glyphicon glyphicon-ok"></span>' +
-    ' UPS Battery has been updated' +
-    '</div>');
-  $('.form-group').removeClass('has-error')
-          .removeClass('has-success');
-  $('.text-danger').remove();
-
-  // reset the form
-  me[0].reset();
-
-  // close the message after seconds
-  $('.alert-success').delay(500).show(10, function() {
-    $(this).delay(3000).hide(10, function() {
-      $(this).remove();
-
-    });
-  })
-}
-
-else {
-  $.each(response.messages, function(key, value) {
-    var element = $('#' + key);
-    element.closest('div.form-group')
-    .removeClass('has-error')
-    .addClass(value.length > 0 ? 'has-error' : 'has-success')
-    .find('.text-danger')
-    .remove();
-    element.after(value);
-  });
-}
-}
-});
-});
-
-
 </script>
+
 
 
 </html>

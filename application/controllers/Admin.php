@@ -53,7 +53,7 @@ class Admin extends CI_Controller{
       $this->load->model('admin_model');
       $data  = array(
         'user_name' => $this->input->post('user_name'),
-        'user_email' => $this->input->post('user_email'),
+        // 'user_email' => $this->input->post('user_email'),
         // 'user_password' => md5($this->input->post('user_password')),
         'user_roles' => $this->input->post('group_id')
     );

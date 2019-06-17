@@ -54,7 +54,7 @@
               //Get Single Outage
               $data['fetch_single_outage'] = $this->network_model->fetch_single_outage($user_id);
               //Get number of hours downtime
-              $data['fetch_single_downtime'] = $this->network_model->fetch_single_downtime();
+              $data['fetch_single_downtime'] = $this->network_model->fetch_single_downtime($user_id);
               $data['fecth_downtime'] = $this->network_model->network_outage();
               $data['get_ISPStatus'] = $this->network_model->get_ISPStatus();
               $this->load->view('template/header');
@@ -80,7 +80,6 @@
                 'Status' => $this->input->post('select_ticket_status'),
                 'TicketID' => $this->input->post('ticketid'),
                 'RFO' => $this->input->post('rfo'),
-
                 'PerformedBy' => $this->session->userdata('user_name')
               );
 

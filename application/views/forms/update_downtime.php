@@ -51,7 +51,7 @@
                 <div class="form-group">
                       <input type="datetime" class="form-control form-control-user" value="<?php echo $row->DateRestored; ?>" name="date_restored" >
                 </div>
-    
+
 
            </div>
            <div class="form-group row">
@@ -74,7 +74,7 @@
             { ?>
            <label>Outage Duration</label></br>
            <div class="form-group">
-             <span class="form-control"><?php echo $row->Downtime; ?></span>
+            <strong> <span class="text-danger"><?php echo $row->Outage; ?></span></strong>
 
            </div>
      <?php }
