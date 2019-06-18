@@ -87,12 +87,6 @@ class Site extends CI_Controller
 				// Report Get NUmber of Registered Users
 				$usersNo = $this->report_model->get_NumberOfUsers();
 				$data['totalUsersNo'] = $usersNo[0]->no;
-				// Report Get the total number of network outage
-				$Outage = $this->report_model->get_NumberOfOutage();
-				$data['totalOutage'] = $Outage[0]->no;
-				// Report Get the total number of network outage
-				$OutageGlobe = $this->report_model->get_NumberOfOutage_Globe();
-				$data['totalOutage_Globe'] = $OutageGlobe[0]->no;
 
 				// Report get the overall assets inserted in the database
 				$TotalKeyboard = $this->report_model->get_DeployedKeyboard(); //get_SpareKeyboard
@@ -123,9 +117,28 @@ class Site extends CI_Controller
 				$data['SpareMonitor'] = $SMonitor[0]->no;
 
 			//
-			// $getData = $this->chart_model->get_data()->result();
-			$getData = $this->chart_model->get_data_pldt()->result();
-			$data['data'] = json_encode($getData);
+			// Data for graphs
+			$getData = $this->chart_model->get_chart_data_globe()->result();
+			$data['dataGlobe'] = json_encode($getData);
+			$getDataPLDT = $this->chart_model->get_chart_data_pldt()->result();
+			$data['dataPLDT'] = json_encode($getDataPLDT);
+			$getDataINFINIVAN = $this->chart_model->get_chart_data_infinivan()->result();
+			$data['dataINFINIVAN'] = json_encode($getDataINFINIVAN);
+			//Data Graphs end
+			//
+			// Report Get the total number of network outage
+			$Outage = $this->network_model->get_NumberOfOutage();
+			$data['totalOutage'] = $Outage[0]->no;
+			// Report Get the total number of network outage for Globe
+			$OutageGlobe = $this->chart_model->get_NumberOfOutage_GLOBE();
+			$data['totalOutage_Globe'] = $OutageGlobe[0]->no;
+			// Report Get the total number of network outage for PLDT
+			$OutagePLDT = $this->chart_model->get_NumberOfOutage_PLDT();
+			$data['totalOutage_PLDT'] = $OutagePLDT[0]->no;
+			// Report Get the total number of network outage for INFINIVAN
+			$OutageINFINIVAN = $this->chart_model->get_NumberOfOutage_INFINIVAN();
+			$data['totalOutage_INFINIVAN'] = $OutageINFINIVAN[0]->no;
+
 			//
 				$data['title'] = 'Welcome to Admin Dashboard';
 				$this->load->view('template/header');

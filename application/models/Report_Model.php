@@ -31,20 +31,8 @@
     }
 
 
-    function get_NumberOfOutage()
-    {
-      $this->db->select('count(*) as no');
-      $query = $this->db->get('network_outage');
-      return $query->result();
-    }
+  
 
-    function get_NumberOfOutage_Globe()
-    {
-      $this->db->select('count(*) as no');
-      $this->db->where('SelectISP','Globe');
-      $query = $this->db->get('network_outage');
-      return $query->result();
-    }
 
     function get_SpareKeyboard()
     {

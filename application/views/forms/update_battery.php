@@ -38,17 +38,7 @@
            </div>
            <div class="form-group">
            </div>
-           <div class="form-group">
-                <label>Data Port</label>
-                <select class="form-control" name="select_port">
-                    <option class="form-control" selected><?php echo $row->DataPort; ?></option>
-                  <?php foreach ($GetPortLocation as $Port) { ?>
-                    <option value="<?php echo $Port['DataPort']; ?>"><?php echo $Port['DataPort']; ?></option>
-                <?php   } ?>
-                </select>
-                <span class="text-danger"><?php echo form_error("select_port"); ?></span>
-                      <span class="text-danger"></span>
-           </div>
+
            <div class="form-group">
                 <label>UPS Asset Tag</label>
                 <input type="text" name="ups_asset_tag" value="<?php echo $row->UPS_AssetTag; ?>" class="form-control" />
@@ -72,7 +62,7 @@
 
            </div>
            <div class="form-group">
-                <input type="hidden" name="hidden_id" value="<?php echo $row->ID; ?>" />
+                <input type="hidden" name="hidden_id" value="<?php echo $row->SerialNumber; ?>" />
                 <input type="submit" name="update" id="update" value="Update" class="btn btn-info" />
 
            </div>

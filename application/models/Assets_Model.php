@@ -33,15 +33,15 @@ class Assets_Model extends CI_Model
           $this->db->insert('asset_batteries',$data);
         }
 
-        function update_battery($data,$id)
+        function update_battery($data,$SerialNumber)
         {
-            $this->db->where('id',$id);
+            $this->db->where('SerialNumber',$SerialNumber);
             $this->db->update('asset_batteries',$data);
         }
 
-        function fetch_single_battery($id)
+        function fetch_single_battery($SerialNumber)
         {
-            $this->db->where('ID',$id);
+            $this->db->where('SerialNumber',$SerialNumber);
             $query = $this->db->get('asset_batteries');
             return $query;
         }
@@ -85,12 +85,7 @@ class Assets_Model extends CI_Model
             return $query;
         }
 
-        // Deployed Access Card
-        function deployed_accesscard()
-        {
-          $query = $this->db->get('asset_accesscard');
-          return $query;
-        }
+
 
         function get_assetlist()
         {
@@ -177,4 +172,18 @@ class Assets_Model extends CI_Model
           $query = $this->db->get('msassets');
           return $query;
         }
+
+        // Deployed Access Card
+        function list_accesscard()
+        {
+          $query = $this->db->get('asset_accesscard');
+          return $query;
+        }
+
+        function access_card()
+        {
+          
+        }
+
+
 }
