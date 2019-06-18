@@ -215,7 +215,7 @@
         }
     }
 
-    function update_battery($id)
+    function update_battery($SerialNumber)
     {
       if($this->session->userdata('logged_in'))
       {
@@ -223,7 +223,7 @@
         $user_id = $this->uri->segment(3);
         // $this->load->model('assets_model');
         $data['get_AssetStatus'] = $this->assets_model->get_AssetStatus();
-        $data['GetPortLocation'] = $this->assets_model->get_DataPort();
+
         $data['fetch_single_battery'] = $this->assets_model->fetch_single_battery($user_id);
           $this->load->view('template/header');
           $this->load->view('template/nav');
@@ -242,7 +242,7 @@
 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('PONumber','po number','required');
-        $this->form_validation->set_rules('ticketid','ticket id','required');
+        // $this->form_validation->set_rules('ticketid','ticket id','required');
 
         if($this->form_validation->run())
         {
@@ -251,7 +251,6 @@
             $data  = array(
                 'PONumber' => $this->input->post('PONumber'),
                 'TicketNumber' => $this->input->post('ticketid'),
-                'DataPort' => $this->input->post('select_port'),
                 'UPS_AssetTag' => $this->input->post('ups_asset_tag'),
                 'DateInstalled' => $this->input->post('date_installed'),
                 'Status' => $this->input->post('select_status'),
@@ -278,7 +277,7 @@
 
     function list_accesscard()
     {
-      $data['get_msasset'] = $this->assets_model->deployed_accesscard();
+      $data['get_msasset'] = $this->assets_model->list_accesscard();
       $data['title'] = 'Access Card Deployment';
       $this->load->view('template/header');
       $this->load->view('template/nav');
@@ -299,7 +298,7 @@
         $this->form_validation->set_rules('ticketid','new access card','required');
         if($this->form_validation->run())
         {
-          die('true');
+            
         }
         else {
           // code...

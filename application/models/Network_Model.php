@@ -3,6 +3,13 @@
 class Network_Model extends  CI_Model
 {
 
+      function get_NumberOfOutage()
+      {
+        $this->db->select('count(*) as no');
+        $query = $this->db->get('network_outage');
+        return $query->result();
+      }
+
       function get_isp()
       {
         $query = $this->db->get('network_isp');

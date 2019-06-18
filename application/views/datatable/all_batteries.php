@@ -3,7 +3,7 @@
           <div class="card shadow mb-4">
 
             <div class="card-header py-3">
-              <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Export Assets to CSV</a>
+              <!-- <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Export Assets to CSV</a> -->
             </div>
 
             <div class="card-body">
@@ -15,7 +15,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Data Port</th>
+
                       <th>Brand</th>
                       <th>Model</th>
                       <th>SerialNumber</th>
@@ -46,7 +46,7 @@
                             {
                     ?>
                     <tr id="<?php echo $row->ID; ?>">
-                        <td data-target="select_port"><?php echo $row->DataPort; ?></td>
+
                         <td data-target="Brand"><?php echo $row->Brand; ?></td>
                         <td data-target="Model"><?php echo $row->Model; ?></td>
                         <td data-target="SerialNumber"><?php echo $row->SerialNumber; ?></td>
@@ -58,7 +58,7 @@
                         <td data-target="PerformedBy"><?php echo $row->PerformedBy; ?></td>
                         <td data-target="select_status"><?php echo $row->Status; ?></td>
                         <td><a href="<?php echo base_url();?>msasset/new_battery/">New Battery</a> |
-                        <a href="<?php echo base_url();?>msasset/update_battery/<?php echo $row->ID; ?>">Update</a> |                    
+                        <a href="<?php echo base_url();?>msasset/update_battery/<?php echo $row->SerialNumber; ?>">Update</a> |
                         <a href="<?php echo base_url();?>asset/asset_deployed/">Deployed</a></td>
 
                       </tr>

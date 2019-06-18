@@ -12,13 +12,13 @@ class Chart extends CI_Controller
       $this->load->model('report_model');
     }
 
-    function index()
-    {
-      $getData = $this->chart_model->get_data()->result();
-      $x['data'] = json_encode($getData);
-      $this->load->view('dashboard/chart_dashboard',$x);
-
-    }
+    // function index()
+    // {
+    //   $getData = $this->chart_model->get_data()->result();
+    //   $x['data'] = json_encode($getData);
+    //   $this->load->view('dashboard/chart_dashboard',$x);
+    //
+    // }
 }
 
 

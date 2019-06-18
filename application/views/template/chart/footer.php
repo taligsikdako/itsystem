@@ -136,14 +136,33 @@
 </body>
 
 <script>
+  //Graph used for Globe  | Microsourcing
     Morris.Line({
       element: 'graph',
-      data: <?php echo $data;?>,
+      data: <?php echo $dataGlobe;?>,
       xkey: 'DateStarted',
-      ykeys: ['ID','Outage'],
-      labels: ['ID','Hours']
+      ykeys: ['Outage'],
+      labels: ['Downtime Hours']
+    });
+    //Graph use for PLDT | Eagleview
+    Morris.Line({
+      element: 'graphPLDT',
+      data: <?php echo $dataPLDT;?>,
+      xkey: 'DateStarted',
+      ykeys: ['Outage'],
+      labels: ['Downtime Hours']
+    });
+
+    //Graph used for INFINIVAN | Eagleview
+    Morris.Line({
+      element: 'graphINFINIVAN',
+      data: <?php echo $dataINFINIVAN;?>,
+      xkey: 'DateStarted',
+      ykeys: ['Outage'],
+      labels: ['Downtime Hours']
     });
 </script>
+
 
 <script type="text/javascript">
 $('#update-password').submit(function(e) {
