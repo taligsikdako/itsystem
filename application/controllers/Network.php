@@ -17,8 +17,9 @@
               $data['get_isp'] = $this->network_model->get_isp();
               $data['get_ISPStatus'] = $this->network_model->get_ISPStatus();
               $data['get_NetworkCID'] = $this->network_model->get_NetworkCID();
+              $data['title'] = 'Add New Outage';
 
-              $data['title'] = 'Network Outage Tracker';
+              $data['content_title'] = 'Network Outage Tracker';
               $this->form_validation->set_rules('select_site','Select Site','required|callback_select_site_validate');
 
               $this->form_validation->set_rules('select_isp','Select Internet Service Provider','required|callback_select_isp_validate');
@@ -28,7 +29,7 @@
               $this->form_validation->set_rules('ticket_id','ticket id','required|callback_check_ticketid_exists');
               if($this->form_validation->run() == FALSE)
               {
-                $this->load->view('template/header');
+                $this->load->view('template/header',$data);
                 $this->load->view('template/nav');
                 $this->load->view('forms/new_outage',$data);
                 $this->load->view('template/footer');
@@ -52,12 +53,13 @@
               // $this->load->model('network_model');
 
               //Get Single Outage
+
               $data['fetch_single_outage'] = $this->network_model->fetch_single_outage($user_id);
               //Get number of hours downtime
               $data['fetch_single_downtime'] = $this->network_model->fetch_single_downtime($user_id);
               $data['fecth_downtime'] = $this->network_model->network_outage();
               $data['get_ISPStatus'] = $this->network_model->get_ISPStatus();
-              $this->load->view('template/header');
+              $this->load->view('template/header',$data);
               $this->load->view('template/nav');
               $this->load->view('forms/update_downtime',$data);
               $this->load->view('template/footer');
@@ -101,8 +103,9 @@
           {
             if($this->session->userdata('logged_in'))
             {
+              $data['title'] = 'List of Network Outage';
               $data['outage'] = $this->network_model->network_outage();
-              $this->load->view('template/header');
+              $this->load->view('template/header',$data);
               $this->load->view('template/nav');
               $this->load->view('datatable/list_networkoutage',$data);
               $this->load->view('template/footer');

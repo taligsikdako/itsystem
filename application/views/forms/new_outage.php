@@ -9,7 +9,7 @@
             <div class="p-5">
               <div class="text-center">
 
-                <h1 class="h4 text-gray-900 mb-4"><?php echo $title ?></h1>
+                <h1 class="h4 text-gray-900 mb-4"><?php echo $content_title ?></h1>
                 <?php if($this->session->flashdata('network_outage')) : ?>
           <?php echo '<p class="alert alert-success">'.$this->session->flashdata('network_outage').'</p>'; ?>
           <?php endif; ?>

@@ -11,7 +11,7 @@
             <div class="p-5">
               <div class="text-center">
 
-                <h1 class="h4 text-gray-900 mb-4"><?php echo $title; ?></h1>
+                <h1 class="h4 text-gray-900 mb-4"><?php echo $content_title; ?></h1>
                   <div id="the-message"></div>
               </div>
               <?php

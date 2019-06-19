@@ -15,7 +15,7 @@
             <div class="col-lg-6">
               <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4"><?php echo $title; ?></h1>
+                  <h1 class="h4 text-gray-900 mb-4"><?php echo $content_title; ?></h1>
                   <?php if($this->session->flashdata('failed_login')) : ?>
                   <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('failed_login').'</p>'; ?>
                   <?php endif; ?>
