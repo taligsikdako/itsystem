@@ -14,9 +14,10 @@ class Admin extends CI_Controller{
         if($this->session->userdata('logged_in') != '')
         {
             $data['getUsers'] = $this->admin_model->getUsers();
+            $data['title'] = 'Account Management';
             if($this->session->userdata('user_roles') == 'Administrator' /* || $this->session->userdata('user_roles') == 'Operation' */)
             {
-                $this->load->view('template/header');
+                $this->load->view('template/header',$data);
                 $this->load->view('template/nav');
                 $this->load->view('admin/user',$data);
                 $this->load->view('template/footer');

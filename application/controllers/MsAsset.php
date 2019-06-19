@@ -14,8 +14,8 @@
       if($this->session->userdata('logged_in'))
       {
         $data['get_msasset'] = $this->assets_model->get_msassets();
-        $data['title'] = 'Assets List';
-        $this->load->view('template/header');
+        $data['title'] = 'List of Assets';
+        $this->load->view('template/header',$data);
         $this->load->view('template/nav');
         $this->load->view('datatable/list_assets',$data);
         $this->load->view('template/footer');
@@ -87,6 +87,7 @@
       if($this->session->userdata('logged_in'))
       {
         $data['title'] = "Update Assets";
+        $data['content_title'] = "Update Assets";
         $user_id = $this->uri->segment(3);
         // $this->load->model('assets_model');
 
@@ -95,7 +96,7 @@
         $data['get_AssetStatus'] = $this->assets_model->get_AssetStatus();
         $data['fetch_data'] = $this->assets_model->get_msassets();
 
-        $this->load->view('template/header');
+        $this->load->view('template/header',$data);
         $this->load->view('template/nav');
         $this->load->view('forms/update_asset',$data);
         $this->load->view('template/footer');
@@ -152,12 +153,12 @@
       if($this->session->userdata('logged_in'))
       {
 
-
+      $data['title'] = 'List of UPS Batteries';
       $data['get_AssetStatus'] = $this->assets_model->get_AssetStatus();
       $data['GetPortLocation'] = $this->assets_model->get_DataPort();
       $data['cardHeader'] = 'Assets Deployed';
       $data['get_batteries'] = $this->assets_model->list_batteries();
-      $this->load->view('template/header');
+      $this->load->view('template/header',$data);
       $this->load->view('template/nav');
       $this->load->view('datatable/all_batteries',$data);
       $this->load->view('template/footer',$data);
@@ -219,13 +220,14 @@
     {
       if($this->session->userdata('logged_in'))
       {
-        $data['title'] = "UPS Batteries Update Tracker";
+        $data['title'] = "Update UPS Battery";
+        $data['content_title'] = "Update UPS Battery";
         $user_id = $this->uri->segment(3);
         // $this->load->model('assets_model');
         $data['get_AssetStatus'] = $this->assets_model->get_AssetStatus();
 
         $data['fetch_single_battery'] = $this->assets_model->fetch_single_battery($user_id);
-          $this->load->view('template/header');
+          $this->load->view('template/header',$data);
           $this->load->view('template/nav');
           $this->load->view('forms/update_battery',$data);
           $this->load->view('template/footer');
@@ -278,8 +280,8 @@
     function list_accesscard()
     {
       $data['get_msasset'] = $this->assets_model->list_accesscard();
-      $data['title'] = 'Access Card Deployment';
-      $this->load->view('template/header');
+      $data['title'] = 'List of Access Card Deployed';
+      $this->load->view('template/header',$data);
       $this->load->view('template/nav');
       $this->load->view('datatable/list_accesscard',$data);
       $this->load->view('template/footer');
@@ -298,11 +300,11 @@
         $this->form_validation->set_rules('ticketid','new access card','required');
         if($this->form_validation->run())
         {
-            
+            // $this->assets_model->
         }
         else {
           // code...
-          $this->load->view('template/header');
+          $this->load->view('template/header',$data);
           $this->load->view('template/nav');
           $this->load->view('forms/access_card_deployment',$data);
           $this->load->view('template/footer');

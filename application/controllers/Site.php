@@ -27,8 +27,9 @@ class Site extends CI_Controller
 			}
 			else
 			{
-				$data['title'] = 'Welcome to Team XTN | Login';
-				$this->load->view('template/modal/header');
+				$data['title'] = 'Login';
+				$data['content_title'] = 'Team XTN - IT System | Login';
+				$this->load->view('template/modal/header',$data);
 				$this->load->view('login',$data);
 				$this->load->view('template/modal/footer');
 				// $this->load->view('template/footer');
@@ -140,9 +141,10 @@ class Site extends CI_Controller
 			$data['totalOutage_INFINIVAN'] = $OutageINFINIVAN[0]->no;
 
 			//
-				$data['title'] = 'Welcome to Admin Dashboard';
-				$this->load->view('template/header');
-				$this->load->view('template/nav');
+				$data['title'] = 'Admin Dashboard';
+				$data['content_title'] = 'Welcome Admin Dashboard';
+				$this->load->view('template/header',$data);
+				$this->load->view('template/nav',$data);
 				$this->load->view('dashboard/admin_dashboard',$data);
 				$this->load->view('template/chart/footer');
 			}
