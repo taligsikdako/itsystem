@@ -69,10 +69,11 @@ class Admin extends CI_Controller{
 
     public function user_group()
     {
-         $data["user_type"] = $this->admin_model->get_usertype();
+            $data["user_type"] = $this->admin_model->get_usertype();
+            $data['title'] = 'Manage User Groups';
                 if($this->session->userdata('user_roles')=='Administrator')
                 {
-                $this->load->view('template/header');
+                $this->load->view('template/header',$data);
                 $this->load->view('template/nav');
                 $this->load->view('admin/user_group',$data);
                 $this->load->view('template/footer');

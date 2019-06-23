@@ -298,9 +298,13 @@
         $this->form_validation->set_rules('access_card','access card','required');
         $this->form_validation->set_rules('new_access_card','access card','required');
         $this->form_validation->set_rules('ticketid','new access card','required');
+        $this->form_validation->set_rules('select_status','status','required');
         if($this->form_validation->run())
         {
-            // $this->assets_model->
+
+            $this->assets_model->access_card_deployment();
+            $this->session->set_flashdata('deployed_access_card','New Access card has been updated');
+            redirect('msasset/list_accesscard');
         }
         else {
           // code...

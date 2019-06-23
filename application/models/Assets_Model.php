@@ -79,7 +79,7 @@ class Assets_Model extends CI_Model
 
         function list_batteries()
         {
-            $this->db->order_by('id','DESC');
+            $this->db->order_by('DateInstalled','DESC');
             // $this->db->where('Site','Cebu');
             $query = $this->db->get('asset_batteries');
             return $query;
@@ -168,7 +168,7 @@ class Assets_Model extends CI_Model
 
         function get_msassets()
         {
-          $this->db->order_by('ID','DESC');
+          $this->db->order_by('DateUpdated','DESC');
           $query = $this->db->get('msassets');
           return $query;
         }
@@ -176,13 +176,20 @@ class Assets_Model extends CI_Model
         // Deployed Access Card
         function list_accesscard()
         {
+          $this->db->order_by('DateAdded','DESC');
           $query = $this->db->get('asset_accesscard');
           return $query;
         }
 
-        function access_card()
+        function access_card_deployment()
         {
-          
+          $data = array(
+              'AccessCard'          => $this->input->post('access_card'),
+              'ReplacementCard'     => $this->input->post('new_access_card'),
+              'TicketId'     => $this->input->post('ticketid'),
+              'Status'       => $this->input->post('select_status')
+          );
+          return $this->db->insert('asset_accesscard',$data);
         }
 
 

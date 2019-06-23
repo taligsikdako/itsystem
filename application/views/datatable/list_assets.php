@@ -29,6 +29,7 @@
                       <th>Status</th>
                       <th>Ownership</th>
                       <th>Microstatus Ticket</th>
+                      <th>Date Updated</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -52,6 +53,7 @@
                         <td><?php echo $row->Ownership; ?></td>
 
                         <td><?php echo $row->MicrostatusTicket; ?></td>
+                        <td><?php echo $row->DateUpdated; ?></td>
 
 
                         <td>

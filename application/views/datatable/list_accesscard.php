@@ -9,6 +9,9 @@
             </div>
 
             <div class="card-body">
+              <?php if($this->session->flashdata('deployed_access_card')) : ?>
+            <?php echo '<p class="alert alert-success">'.$this->session->flashdata('deployed_access_card').'</p>'; ?>
+            <?php endif; ?>
 
             <?php if($this->session->flashdata('assets_updated')) : ?>
           <?php echo '<p class="alert alert-success">'.$this->session->flashdata('assets_updated').'</p>'; ?>
