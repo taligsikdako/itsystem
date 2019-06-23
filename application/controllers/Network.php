@@ -77,6 +77,7 @@
             $this->form_validation->set_rules('ticketid','ticket id','required');
             if($this->form_validation->run())
             {
+
               $data  = array(
                 'DateRestored' => $this->input->post('date_restored'),
                 'Status' => $this->input->post('select_ticket_status'),
