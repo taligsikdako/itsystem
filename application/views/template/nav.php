@@ -57,10 +57,12 @@
           <!--  -->
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Manage Assets</h6>
-            <!-- <a class="collapse-item" href="<?php echo base_url();?>asset/new_asset">New Asset</a>
-            <a class="collapse-item wordwrap" href="<?php echo base_url(); ?>asset/get_allassets/">List of Assets</a> -->
-              <a class="collapse-item" href="<?php echo base_url(); ?>msasset/ms_assets">Assets</a>
-             <a class="collapse-item" href="<?php echo base_url(); ?>msasset/ups_batteries">UPS Battery</a>
+
+
+          <a class="collapse-item" href="<?php echo base_url(); ?>msasset/assets_keyboard">Keyboard</a>
+          <a class="collapse-item" href="<?php echo base_url(); ?>msasset/assets_mouse">Mouse</a>
+             <a class="collapse-item" href="<?php echo base_url(); ?>msasset/ups_batteries">UPS Batteries</a>
+             <a class="collapse-item" href="<?php echo base_url(); ?>asset/storage_deployment">Storage</a>
 
 
 
@@ -75,6 +77,19 @@
         Tracker
       </div>
       <!-- Nav Item - Pages Collapse Menu -->
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHDD" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-hdd"></i>
+          <span>Storage</span>
+        </a>
+        <div id="collapseHDD" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Storage Drive</h6>
+              <a class="collapse-item wordwrap" href="<?php echo base_url(); ?>network/network_outage">Hard Drive</a>
+          </div>
+        </div>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-ethernet"></i>
@@ -84,7 +99,6 @@
           <!--  -->
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Network Downtime</h6>
-            <a class="collapse-item wordwrap" href="<?php echo base_url(); ?>network/new_outage">New Outage</a>
               <a class="collapse-item wordwrap" href="<?php echo base_url(); ?>network/network_outage">Network Outage</a>
           </div>
         </div>

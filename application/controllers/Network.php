@@ -50,9 +50,6 @@
             {
               $data['title'] = 'Update Network Downtime';
               $user_id = $this->uri->segment(3);
-              // $this->load->model('network_model');
-
-              //Get Single Outage
 
               $data['fetch_single_outage'] = $this->network_model->fetch_single_outage($user_id);
               //Get number of hours downtime
@@ -73,7 +70,7 @@
 
           function network_update_form_validation()
           {
-            // $this->load->library('')
+
             $this->form_validation->set_rules('ticketid','ticket id','required');
             if($this->form_validation->run())
             {
@@ -114,6 +111,22 @@
             else
             {
               redirect('site');
+            }
+          }
+          // Datatable for globe outage only
+          function outage_globe()
+          {
+            if($this->session->userdata('logged_in'))
+            {
+              $data['title'] = 'List of Globe Network Outage';
+              $data['outage_globe'] = $this->network_model->outage_globe();
+              $this->load->view('template/header',$data);
+              $this->load->view('template/nav');
+              $this->load->view('datatable/outage_globe',$data);
+              $this->load->view('template/footer');
+            }
+            else {
+
             }
           }
 

@@ -23,14 +23,46 @@ class Assets_Model extends CI_Model
           'WarrantyStartDate'        => $this->input->post('start_date'),
           'WarrantyEndDate'        => $this->input->post('end_date'),
           'Status'        => $this->input->post('select_status'),
-          'AddedBy' => $this->session->userdata('user_name')
-      );
-      return $this->db->insert('msassets',$data);
-        }
+          'AddedBy' => $this->session->userdata('user_name'));
+          return $this->db->insert('msassets',$data);
+    }
 
         function new_battery($data)
         {
           $this->db->insert('asset_batteries',$data);
+        }
+        //Deployed Hard Drive
+        function deployed_hdd($data)
+        {
+          $this->db->insert('asset_storagedevice',$data);
+        }
+
+        //Get Storage Deployment or asset storage device
+        function hdd_deployment()
+        {
+            // $this->db->order_by('id','DESC');
+            $query = $this->db->get('asset_storagedevice');
+            return $query;
+        }
+
+        function fetch_hard_drive($id)
+        {
+          $this->db->where('ID',$id);
+          $query = $this->db->get('asset_storagedevice');
+          return $query;
+        }
+
+        function storage_drive_status()
+        {
+          $query = $this->db->get('asset_status');
+          return $query->result_array();
+        }
+
+        //This to update existing hdd
+        function update_deployed_hdd($data,$id)
+        {
+          $this->db->where('id',$id);
+          $this->db->update('asset_storagedevice',$data);
         }
 
         function update_battery($data,$SerialNumber)
@@ -85,8 +117,6 @@ class Assets_Model extends CI_Model
             return $query;
         }
 
-
-
         function get_assetlist()
         {
             $this->db->order_by('id','DESC');
@@ -124,6 +154,9 @@ class Assets_Model extends CI_Model
             $query = $this->db->get('assets');
             return $query;
         }
+
+
+
 
         function fetch_single_asset($id)
         {
@@ -165,10 +198,26 @@ class Assets_Model extends CI_Model
                     return false;
                 }
         }
-
+        //Get all Assets such as keyboard,mouse,ups
         function get_msassets()
         {
           $this->db->order_by('DateUpdated','DESC');
+          $query = $this->db->get('msassets');
+          return $query;
+        }
+        //Get all keyboard assets
+        function assets_keyboard()
+        {
+          $this->db->order_by('DateUpdated','DESC');
+          $this->db->where('AssetType','Keyboard');
+          $query = $this->db->get('msassets');
+          return $query;
+        }
+        //Get all keyboard assets
+        function assets_mouse()
+        {
+          $this->db->order_by('DateUpdated','DESC');
+          $this->db->where('AssetType','Mouse');
           $query = $this->db->get('msassets');
           return $query;
         }
