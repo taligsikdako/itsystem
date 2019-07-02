@@ -109,7 +109,7 @@
 
     function check_AssetSerial_exists($Serial)
     {
-        $this->form_validation->set_message('check_serial_exists','The Asset Serial is already exist, please update the existing machine');
+        $this->form_validation->set_message('check_AssetSerial_exists','The Asset Serial is already exist, please update the existing machine');
         if($this->assets_model->check_AssetSerial_exists($Serial))
         {
             return true;
@@ -242,7 +242,7 @@
 
     function check_BatterySerial_exists($BatterySerial)
     {
-        $this->form_validation->set_message('check_serial_exists','The Battery Serial is already exist');
+        $this->form_validation->set_message('check_BatterySerial_exists','The Battery Serial Number is already exist');
         if($this->assets_model->check_BatterySerial_exists($BatterySerial))
         {
             return true;

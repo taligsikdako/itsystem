@@ -36,19 +36,32 @@ class Assets_Model extends CI_Model
         {
           $this->db->insert('asset_storagedevice',$data);
         }
-
+        //Query existing hdd serial Number
+        function check_hddserial_exists($hddSerial)
+        {
+            $query = $this->db->get_where('asset_storagedevice',array(
+                'SerialNumber' => $hddSerial));
+                if(empty($query->row_array()))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+        }
         //Get Storage Deployment or asset storage device
         function hdd_deployment()
         {
             // $this->db->order_by('id','DESC');
-            $query = $this->db->get('asset_storagedevice');
+            $query = $this->db->get('viewassetstorage');
             return $query;
         }
 
         function fetch_hard_drive($id)
         {
           $this->db->where('ID',$id);
-          $query = $this->db->get('asset_storagedevice');
+          $query = $this->db->get('viewassetstorage');
           return $query;
         }
 

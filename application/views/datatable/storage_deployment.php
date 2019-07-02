@@ -20,6 +20,9 @@
             <?php if($this->session->flashdata('updated_storage_hdd')) : ?>
             <?php echo '<p class="alert alert-success">'.$this->session->flashdata('updated_storage_hdd').'</p>'; ?>
             <?php endif; ?>
+            <?php if($this->session->flashdata('deployed_hdd')) : ?>
+      <?php echo '<p class="alert alert-success">'.$this->session->flashdata('deployed_hdd').'</p>'; ?>
+      <?php endif; ?>
           <h6 class="m-0 font-weight-bold text-primary"><?php echo $title; ?></h6>
           </div>
 
@@ -38,7 +41,9 @@
                       <th>Capacity</th>
                       <th>Status</th>
                       <th>Location</th>
+                      <th>Asset Tag</th>
                       <th>Performed By</th>
+
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -57,7 +62,9 @@
                         <td><?php echo $row->Capacity; ?></td>
                         <td><?php echo $row->Status; ?></td>
                         <td><?php echo $row->Location; ?></td>
+                        <td><?php echo $row->AssetTag; ?></td>
                         <td><?php echo $row->AddedBy; ?></td>
+
                         <td><a href="<?php echo base_url();?>asset/deployed_hdd">New</a> |
                         <a href="<?php echo base_url();?>asset/update_deployed_hdd/<?php echo $row->ID; ?>">Update</a>
 
