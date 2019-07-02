@@ -66,28 +66,34 @@ class Network_Model extends  CI_Model
           $this->db->update('network_outage',$data);
       }
 
-        function network_outage()
-        {
-          $this->db->order_by('ID','DESC');
-          $query =$this->db->get('network_outage');
-          return $query;
-        }
+      function network_outage()
+      {
+        $this->db->order_by('DateStarted','DESC');
+        $query =$this->db->get('network_outage');
+        return $query;
+      }
 
+      function outage_globe()
+      {
+        $this->db->order_by('DateStarted','DESC');
+        $this->db->where('SelectISP','GLOBE');
+        $query = $this->db->get('network_outage');
+        return $query;
+      }
 
-
-        function check_ticketid_exists($TicketID)
-        {
-          $query = $this->db->get_where('network_outage',array(
-              'TicketID' => $TicketID));
-              if(empty($query->row_array()))
-              {
-                  return true;
-              }
-              else
-              {
-                  return false;
-              }
-        }
+      function check_ticketid_exists($TicketID)
+      {
+        $query = $this->db->get_where('network_outage',array(
+            'TicketID' => $TicketID));
+            if(empty($query->row_array()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+      }
 
 
 }

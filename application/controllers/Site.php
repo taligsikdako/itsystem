@@ -16,8 +16,6 @@ class Site extends CI_Controller
 		$this->load->model('network_model');
 		$this->load->model('report_model');
 		$this->load->model('chart_model');
-
-
 	}
 		public function index()
 		{
@@ -37,13 +35,14 @@ class Site extends CI_Controller
 		}
 
 		function login(){
+		 $data['content_title'] = 'Login';
 		 $data['title'] = 'Sign In';
 
 		 $this->form_validation->set_rules('user_email','email','required|valid_email');
 		 $this->form_validation->set_rules('user_password','password','required');
 
 		 if($this->form_validation->run() === FALSE){
-			 $this->load->view('template/modal/header');
+			 $this->load->view('template/modal/header',$data);
 			 $this->load->view('login',$data);
 			 $this->load->view('template/modal/footer');
 

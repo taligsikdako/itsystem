@@ -30,13 +30,8 @@
       return $query->result();
     }
 
-
-  
-
-
     function get_SpareKeyboard()
     {
-
       $this->db->where('AssetType','Keyboard');
       $this->db->where('Status','Spare');
       $this->db->select('count(*) as no');

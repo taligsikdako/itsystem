@@ -9,6 +9,7 @@
           <!-- DataTales Example -->
 
 
+
           <div class="card shadow mb-4">
 
             <div class="card-header py-3">
@@ -16,26 +17,27 @@
 
             </div>
           <div class="card-body">
+            <?php if($this->session->flashdata('updated_storage_hdd')) : ?>
+            <?php echo '<p class="alert alert-success">'.$this->session->flashdata('updated_storage_hdd').'</p>'; ?>
+            <?php endif; ?>
           <h6 class="m-0 font-weight-bold text-primary"><?php echo $title; ?></h6>
           </div>
 
 
             <div class="card-body">
 
-            <?php if($this->session->flashdata('downtime_updated')) : ?>
-          <?php echo '<p class="alert alert-success">'.$this->session->flashdata('downtime_updated').'</p>'; ?>
-          <?php endif; ?>
+
 
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Site</th>
-                      <th>ISP</th>
+                      <th>Brand</th>
+                      <th>Model</th>
+                      <th>Serial Number</th>
+                      <th>Capacity</th>
                       <th>Status</th>
-                      <th>Ticket</th>
-                      <th>Date Started</th>
-                      <th>Date Restored</th>
+                      <th>Location</th>
                       <th>Performed By</th>
                       <th>Action</th>
                     </tr>
@@ -43,23 +45,22 @@
 
                   <tbody>
                   <?php
-                    if($outage->num_rows() > 0)
+                    if($hdd_deployment->num_rows() > 0)
                     {
-                            foreach($outage->result() as $row)
+                            foreach($hdd_deployment->result() as $row)
                             {
                     ?>
                     <tr>
-                        <td><?php echo $row->Site; ?></td>
-                        <td><?php echo $row->SelectISP; ?> - <?php echo $row->select_circuit ?></td>
-
+                        <td><?php echo $row->Brand; ?></td>
+                        <td><?php echo $row->Model; ?></td>
+                        <td><?php echo $row->SerialNumber; ?></td>
+                        <td><?php echo $row->Capacity; ?></td>
                         <td><?php echo $row->Status; ?></td>
-                        <td><?php echo $row->TicketID; ?></td>
-                        <td><?php echo $row->DateStarted; ?></td>
-                        <td><?php echo $row->DateRestored; ?></td>
+                        <td><?php echo $row->Location; ?></td>
+                        <td><?php echo $row->AddedBy; ?></td>
+                        <td><a href="<?php echo base_url();?>asset/deployed_hdd">New</a> |
+                        <a href="<?php echo base_url();?>asset/update_deployed_hdd/<?php echo $row->ID; ?>">Update</a>
 
-                        <td><?php echo $row->PerformedBy; ?></td>
-                        <td><a href="<?php echo base_url();?>network/update_downtime/<?php echo $row->ID; ?>">Update</a> | </br>
-                        <a href="<?php echo base_url();?>network/new_outage/">New Outage</a>
                       </tr>
                     <?php
                        }

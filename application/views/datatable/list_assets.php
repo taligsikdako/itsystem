@@ -58,8 +58,8 @@
 
                         <td>
                         <a href="<?php echo base_url();?>msasset/new_asset/">New Asset</a> |
-                        <a href="<?php echo base_url();?>msasset/update_asset/<?php echo $row->ID; ?>">Update</a> |
-                        <a href="<?php echo base_url();?>msasset/import_msassets/">Import Assets</a>
+                        <a href="<?php echo base_url();?>msasset/update_asset/<?php echo $row->ID; ?>">Update</a>
+
                         </td>
 
                       </tr>

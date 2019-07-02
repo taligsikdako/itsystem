@@ -108,7 +108,7 @@
                   <h6 class="m-0 font-weight-bold text-primary">Microsourcing | Globe | CID: 446539</h6>
 
                   <div class="dropdown no-arrow">
-              <h6 class="m-0 font-weight-bold text-primary">    <?php echo $totalOutage_Globe; ?> </h6>
+              <h6 class="m-0 font-weight-bold text-primary"> <a href="<?php echo base_url('network/outage_globe'); ?>"> <?php echo $totalOutage_Globe; ?></a> </h6>
                     <!-- <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>

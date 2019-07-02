@@ -27,10 +27,47 @@
 
     }
 
+    function assets_keyboard()
+    {
+      if($this->session->userdata('logged_in'))
+      {
+        $data['get_msasset'] = $this->assets_model->assets_keyboard();
+        $data['title'] = 'Keyboard - Spare /Deployed / Defective';
+        $this->load->view('template/header',$data);
+        $this->load->view('template/nav');
+        $this->load->view('datatable/list_assets',$data);
+        $this->load->view('template/footer');
+      }
+      else {
+        // code...
+        redirect('site');
+      }
+
+    }
+
+    function assets_mouse()
+    {
+      if($this->session->userdata('logged_in'))
+      {
+        $data['get_msasset'] = $this->assets_model->assets_mouse();
+        $data['title'] = 'Mices - Spare / Deployed / Defective';
+        $this->load->view('template/header',$data);
+        $this->load->view('template/nav');
+        $this->load->view('datatable/list_assets',$data);
+        $this->load->view('template/footer');
+      }
+      else {
+        // code...
+        redirect('site');
+      }
+
+    }
+
     function new_asset()
     {
       if($this->session->userdata('logged_in'))
       {
+        $data['title'] = 'Add New Assets';
         $data['getAssetType'] = $this->assets_model->get_AssetType();
         $data['GetPortLocation'] = $this->assets_model->get_DataPort();
         $data['getAssetStatus'] = $this->assets_model->get_AssetStatus();
@@ -49,7 +86,7 @@
         if($this->form_validation->run() == FALSE)
         {
           $data['title'] = ' Create New Asset';
-          $this->load->view('template/header');
+          $this->load->view('template/header',$data);
           $this->load->view('template/nav');
           $this->load->view('forms/new_asset',$data);
           $this->load->view('template/footer');
@@ -68,6 +105,7 @@
       }
 
     }
+
 
     function check_AssetSerial_exists($Serial)
     {
@@ -126,8 +164,7 @@
                 'DataPort' => $this->input->post('select_port'),
                 'DateUpdated' =>$this->input->post('date_updated'),
                 'Status' => $this->input->post('select_status'),
-                'DeployedBy' => $this->session->userdata('user_name'),
-            );
+                'DeployedBy' => $this->session->userdata('user_name'));
             if($this->input->post('update'))
             {
                 $this->assets_model->update_assets($data,$this->input->post('hidden_id'));

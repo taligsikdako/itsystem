@@ -22,9 +22,7 @@
 
             <div class="card-body">
 
-            <?php if($this->session->flashdata('downtime_updated')) : ?>
-          <?php echo '<p class="alert alert-success">'.$this->session->flashdata('downtime_updated').'</p>'; ?>
-          <?php endif; ?>
+
 
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -43,9 +41,9 @@
 
                   <tbody>
                   <?php
-                    if($outage->num_rows() > 0)
+                    if($outage_globe->num_rows() > 0)
                     {
-                            foreach($outage->result() as $row)
+                            foreach($outage_globe->result() as $row)
                             {
                     ?>
                     <tr>
