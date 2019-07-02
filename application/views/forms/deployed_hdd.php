@@ -4,17 +4,15 @@
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
-          <div class="col-lg-5 d-none d-lg-block bg-network-image"></div>
+          <div class="col-lg-5 d-none d-lg-block bg-hdd-image"></div>
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
 
                 <h1 class="h4 text-gray-900 mb-4"><?php echo $content_title ?></h1>
-                <?php if($this->session->flashdata('deployed_hdd')) : ?>
-          <?php echo '<p class="alert alert-success">'.$this->session->flashdata('deployed_hdd').'</p>'; ?>
-          <?php endif; ?>
 
-      
+
+
               </div>
             <?php echo form_open('asset/deployed_hdd'); ?>
                 <div class="form-group row">
@@ -49,16 +47,7 @@
 
                 <div class="form-group row">
                   <!-- Left CColumn -->
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                      <label class="col-lg mb-7 mb-sm-0 small">Is Installed?</label>
-                    <select class="form-control" name="select_installed">
-                          <option value="" selected disabled>--Please Select--</option>
-                          <?php foreach ($get_ISPStatus as $network_status) { ?>
-                          <option value="<?php echo $network_status['network_status']; ?>"><?php echo $network_status['network_status']; ?></option>
-                      <?php } ?>
-                    </select>
-                    <span class="text-danger"><?php echo form_error('select_installed'); ?></span>
-                   </div>
+
                   <!-- Right Column -->
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <label class="col-lg mb-7 mb-sm-0 small">Bundled CPU / Location</label>
@@ -83,10 +72,10 @@
                 <div class="form-group row">
                   <!-- Left CColumn -->
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <select class="form-control" name="select_status">
-                          <option value="" selected disabled>--Select Status--</option>
-                          <?php foreach ($get_ISPStatus as $network_status) { ?>
-                          <option value="<?php echo $network_status['network_status']; ?>"><?php echo $network_status['network_status']; ?></option>
+                    <select class="form-control"  name="select_status">
+                          <option selected>--Select Status--</option>
+                          <?php foreach ($storage_drive_status as $storage_drive_status) { ?>
+                          <option value="<?php echo $storage_drive_status['AssetStatus']; ?>"><?php echo $storage_drive_status['AssetStatus']; ?></option>
                       <?php } ?>
                     </select>
                     <span class="text-danger"><?php echo form_error('select_status'); ?></span>
@@ -99,7 +88,7 @@
                 <div class="form-group row">
                 <!-- <textarea class="form-control" name="name" rows="8" cols="80"></textarea> -->
                     <label class="col-lg mb-7 mb-sm-0 small">Remarks/s</label>
-                <textarea class="form-control" name="Remarks" rows="5" cols="75"></textarea>
+                <textarea class="form-control" value="<?php echo set_value('Remarks') ?>"name="Remarks" rows="5" cols="75"></textarea>
                 </div>
                 <div class="form-group row">
 
@@ -112,7 +101,7 @@
               <button class="btn btn-primary btn-user btn-block">Submit</button>
               </form>
               <div class="text-center">
-                <a class="small" href="<?php echo base_url('msasset/storage_deployment') ?>">View Hard Disk Drives Deploment</a>
+                <a class="small" href="<?php echo base_url('asset/storage_deployment') ?>">View Hard Disk Drives Deploment</a>
               </div>
             </div>
           </div>

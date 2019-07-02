@@ -36,10 +36,10 @@ class Asset extends CI_Controller
       {
         $data['title'] = 'Deployed Storage Device/s';
         $data['content_title'] = 'Deployed Storage Device/s';
-
+        $data['storage_drive_status'] = $this->assets_model->storage_drive_status();
         $this->form_validation->set_rules('Brand','brand','required');
         $this->form_validation->set_rules('Model','model','required');
-        $this->form_validation->set_rules('SerialNumber','storage serial','required');
+        $this->form_validation->set_rules('SerialNumber','storage serial','required|callback_check_hddserial_exists');
         $this->form_validation->set_rules('Capacity','capacity','required');
         // $this->form_validation->set_rules('select_installed','installed','required');
         $this->form_validation->set_rules('BundledCPU','bundled cpu','required');
@@ -59,7 +59,7 @@ class Asset extends CI_Controller
             'Model' => $this->input->post('Model'),
             'SerialNumber' => $this->input->post('SerialNumber'),
             'Capacity' => $this->input->post('Capacity'),
-            'Installed' => $this->input->post('select_installed'),
+
             'Location' => $this->input->post('BundledCPU'),
             'MicrostatusTicket' => $this->input->post('MicrostatusTicket'),
             'AddedBy' => $this->session->userdata('user_name'),
@@ -68,11 +68,23 @@ class Asset extends CI_Controller
           );
           $this->assets_model->deployed_hdd($data);
           $this->session->set_flashdata('deployed_hdd','New assets has been added successfully');
-          redirect('asset/deployed_hdd');
+          redirect('asset/storage_deployment');
         }
       }
       else {
         redirect('site');
+      }
+    }
+    //Check existing storage device serial
+    function check_hddserial_exists($hddSerial)
+    {
+      $this->form_validation->set_message('check_hddserial_exists','The HDD Serial Number is already exist, please update the exist hard drive');
+      if($this->assets_model->check_hddserial_exists($hddSerial))
+      {
+        return true;
+      }
+      else {
+        return false;
       }
     }
     //End Deployed HDD
@@ -111,7 +123,7 @@ class Asset extends CI_Controller
         }
         else {
 
-          // echo validation_errors();
+          echo validation_errors();
 
         }
 
@@ -119,6 +131,7 @@ class Asset extends CI_Controller
       else {
       redirect('site');
       }
+
     }
 }
 //

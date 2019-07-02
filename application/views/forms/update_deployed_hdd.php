@@ -4,7 +4,7 @@
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
-          <div class="col-lg-5 d-none d-lg-block bg-network-image"></div>
+          <div class="col-lg-5 d-none d-lg-block bg-hdd-image"></div>
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
@@ -15,17 +15,34 @@
           <?php endif; ?>
               </div>
             <?php echo form_open('asset/update_deployed_hdd'); ?>
+            <?php if(isset($fetch_hard_drive_data)) ?>
+            <?php {
+
+              foreach ($fetch_hard_drive_data->result() as $row)
+              {
+
+               ?>
+               <div class="form-group row">
+                 <!-- Left CColumn -->
+                 <div class="col-sm-6 mb-3 mb-sm-0">
+
+
+                   <label class="col-lg mb-7 mb-sm-0 small">Asset Tag</label>
+                   <span class="form-control form-control-user"><?php echo $row->AssetTag ?></span>
+
+                   <span class="text-danger"><?php echo form_error('Brand'); ?></span>
+                  </div>
+                 <!-- Right Column -->
+                 <!-- <div class="col-sm-6 mb-3 mb-sm-0">
+                   <label class="col-lg mb-7 mb-sm-0 small">Model</label>
+                   <input type="text" class="form-control form-control-user" value="<?php echo $row->Model; ?>"  name="Model">
+                   <span class="text-danger"><?php echo form_error('Model'); ?></span>
+                  </div> -->
+               </div>
+
                 <div class="form-group row">
                   <!-- Left CColumn -->
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <?php if(isset($fetch_hard_drive_data)) ?>
-                    <?php {
-
-                      foreach ($fetch_hard_drive_data->result() as $row)
-                      {
-
-                       ?>
-
                     <label class="col-lg mb-7 mb-sm-0 small">Brand</label>
                     <input type="text" class="form-control form-control-user" value="<?php echo $row->Brand ?>"  name="Brand">
                     <span class="text-danger"><?php echo form_error('Brand'); ?></span>
@@ -112,7 +129,7 @@
               <!-- <button class="btn btn-primary btn-user btn-block">Submit</button> -->
               </form>
               <div class="text-center">
-                <a class="small" href="<?php echo base_url('msasset/storage_deployment') ?>">View Hard Disk Drives Deploment</a>
+                <a class="small" href="<?php echo base_url('asset/storage_deployment') ?>">View Hard Disk Drives Deploment</a>
 
                 <?php }
 

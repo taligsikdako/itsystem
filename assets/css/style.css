@@ -16,7 +16,13 @@
     background-size: cover;
 }
 
-.bg-network_update-image {
+.bg-hdd-image {
+    background: url(http://intranetmsit.amberbase.eagleview.com/itsystem/assets/img/hdd_storage.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-network-image {
     background: url((http://intranetmsit.amberbase.eagleview.com/itsystem/assets/img/network_update.jpg);
     background-position: center;
     background-size: cover;
