@@ -127,9 +127,6 @@
 <!-- Page level custom scripts -->
  <!-- <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/demo/chart-area-demo.js"></script> -->
 <!-- <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/demo/chart-pie-demo.js"></script> -->
-
-</body>
-
 <script type="text/javascript">
 $('#update-password').submit(function(e) {
 e.preventDefault();
@@ -234,6 +231,5 @@ else {
 
 
 </script>
-
-
+</body>
 </html>
