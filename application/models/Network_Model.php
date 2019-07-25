@@ -69,7 +69,7 @@ class Network_Model extends  CI_Model
       function network_outage()
       {
         $this->db->order_by('DateStarted','DESC');
-        $query =$this->db->get('network_outage');
+        $query =$this->db->get('network_chart');
         return $query;
       }
 
@@ -77,7 +77,22 @@ class Network_Model extends  CI_Model
       {
         $this->db->order_by('DateStarted','DESC');
         $this->db->where('SelectISP','GLOBE');
-        $query = $this->db->get('network_outage');
+        $query = $this->db->get('network_chart');
+        return $query;
+      }
+      function outage_pldt()
+      {
+        $this->db->order_by('DateStarted','DESC');
+        $this->db->where('SelectISP','PLDT');
+        $query = $this->db->get('network_chart');
+        return $query;
+      }
+
+      function outage_infinivan()
+      {
+        $this->db->order_by('DateStarted','DESC');
+        $this->db->where('SelectISP','INFINIVAN');
+        $query = $this->db->get('network_chart');
         return $query;
       }
 

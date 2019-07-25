@@ -42,9 +42,9 @@
 
                   <tbody>
                   <?php
-                    if($outage_globe->num_rows() > 0)
+                    if($outage_pldt->num_rows() > 0)
                     {
-                            foreach($outage_globe->result() as $row)
+                            foreach($outage_pldt->result() as $row)
                             {
                     ?>
                     <tr>

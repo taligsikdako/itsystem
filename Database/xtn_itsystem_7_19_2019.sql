@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2019 at 01:19 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 5.6.40
+-- Generation Time: Jul 19, 2019 at 12:06 AM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,172 +25,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `assets_old`
+-- Table structure for table `account`
 --
 
-CREATE TABLE `assets_old` (
+CREATE TABLE `account` (
   `id` int(11) NOT NULL,
-  `asset_id` int(11) NOT NULL,
-  `Site` varchar(255) NOT NULL,
-  `AssetType` varchar(255) NOT NULL,
-  `CPUSerialNumber` varchar(255) NOT NULL,
-  `SerialNumber` varchar(255) NOT NULL,
-  `ReplacementSerialNumber` varchar(255) NOT NULL,
-  `DatePurchased` date NOT NULL,
-  `ReceivedBy` varchar(255) NOT NULL,
-  `DateReceived` date NOT NULL,
-  `PONumber` varchar(255) NOT NULL,
-  `Status` varchar(255) NOT NULL,
-  `DateAdded` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `DataPort` varchar(255) DEFAULT NULL,
-  `DeployedBy` varchar(255) DEFAULT NULL,
-  `DateDeployed` date DEFAULT NULL,
-  `TicketID` varchar(100) DEFAULT NULL,
-  `Remarks` varchar(500) DEFAULT NULL
+  `year` year(4) DEFAULT NULL,
+  `purchase` int(11) DEFAULT NULL,
+  `sale` int(11) DEFAULT NULL,
+  `profit` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `assets_old`
+-- Dumping data for table `account`
 --
 
-INSERT INTO `assets_old` (`id`, `asset_id`, `Site`, `AssetType`, `CPUSerialNumber`, `SerialNumber`, `ReplacementSerialNumber`, `DatePurchased`, `ReceivedBy`, `DateReceived`, `PONumber`, `Status`, `DateAdded`, `DataPort`, `DeployedBy`, `DateDeployed`, `TicketID`, `Remarks`) VALUES
-(1, 0, 'Cebu', 'Keyboard', 'SGH817RFC3', 'BEXHP0CCPAP6J3', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:20:39', NULL, NULL, NULL, NULL, NULL),
-(2, 0, 'Cebu', 'Keyboard', 'SGH817RFC4', 'BEXHP0CCPAP6J2', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:21:17', NULL, NULL, NULL, NULL, NULL),
-(3, 0, 'Cebu', 'Keyboard', 'SGH817RFCG', 'BEXHP0CCPAP6J9', '', '2018-05-30', 'Administrator', '2015-05-30', '10003613', 'Deployed', '2019-05-13 03:21:42', 'D119', 'Arjay Cobarde', '2019-05-10', 'OP358118', NULL),
-(4, 0, 'Cebu', 'Keyboard', 'SGH817RFCH', 'BEXHP0CCPAP6J4', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:22:21', 'D025', 'Administrator', '2018-09-09', 'OP299018', NULL),
-(5, 0, 'Cebu', 'Keyboard', 'SGH817RFCL', 'BEXHP0CCPAP6J8', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:22:46', NULL, NULL, NULL, NULL, NULL),
-(6, 0, 'Cebu', 'Keyboard', 'SGH817RFCM', 'BEXHP0CCPAP6J6', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:23:12', NULL, NULL, NULL, NULL, NULL),
-(7, 0, 'Cebu', 'Keyboard', 'SGH817RFC5', 'BEXHP0CCPAP6J5', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:23:39', NULL, NULL, NULL, NULL, NULL),
-(8, 0, 'Cebu', 'Keyboard', 'SGH817RFC6', 'BEXHP0CCPAP6J7', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:24:28', NULL, NULL, NULL, NULL, NULL),
-(9, 0, 'Cebu', 'Keyboard', 'SGH817RFCJ', 'BEXHP0CCPAP8JL', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:24:58', 'D020', 'Arjay Cobarde', '2018-09-26', 'OP303950', NULL),
-(10, 0, 'Cebu', 'Keyboard', 'SGH817RFCK', 'BEXHP0CCPAP8JN', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:25:21', NULL, NULL, NULL, NULL, NULL),
-(11, 0, 'Cebu', 'Keyboard', 'SGH817RFC7', 'BEXHP0CCPAP8JM', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:25:40', NULL, NULL, NULL, NULL, NULL),
-(12, 0, 'Cebu', 'Keyboard', 'SGH817RFC8', 'BEXHP0CCPAP8J0', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:26:10', 'D132', 'Arjay Cobarde', '2018-07-23', 'OP286604', NULL),
-(13, 0, 'Cebu', 'Keyboard', 'SGH817RFC1', 'BEXHP0CCPAP8JG', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:26:31', NULL, NULL, NULL, NULL, NULL),
-(14, 0, 'Cebu', 'Keyboard', 'SGH817RFCZ', 'BEXHP0CCPAP8JF', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:26:52', 'D045', 'Arjay Cobarde', '2018-10-24', 'OP311337', NULL),
-(15, 0, 'Cebu', 'Keyboard', 'SGH817RFCT', 'BEXHP0CCPAP8JP', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:27:24', 'D058', 'Arjay Cobarde', '2019-02-20', 'OP338693', NULL),
-(16, 0, 'Cebu', 'Keyboard', 'SGH817RFCV', 'BEXHP0CCOAO8JI', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:27:46', 'D055', 'Arjay Cobarde', '2018-10-24', 'OP311334', NULL),
-(17, 0, 'Cebu', 'Keyboard', 'SGH817RFCY', 'BEXHP0CCPAP8JJ', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:28:07', 'D068', 'Arjay Cobarde', '2018-10-24', 'OP311141', NULL),
-(18, 0, 'Cebu', 'Keyboard', 'SGH817RFCS', 'BEXHP0CCPAP8JH', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:28:41', 'D001', 'Arjay Cobarde', '2018-10-11', 'OP307746', NULL),
-(19, 0, 'Cebu', 'Keyboard', 'SGH817RFBZ', 'BEXHP0CCPAP8KT', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:31:56', NULL, NULL, NULL, NULL, NULL),
-(20, 0, 'Cebu', 'Keyboard', 'SGH817RFC2', 'BEXHP0CCPAP8KU', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:32:19', 'D001', 'Arjay Cobarde', '2019-02-19', 'OP338333', NULL),
-(21, 0, 'Cebu', 'Keyboard', 'SGH817RFC0', 'BEXHP0CCPAP8KV', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:32:45', 'D131', 'Arjay Cobarde', '2018-09-15', 'OP300912', NULL),
-(22, 0, 'Cebu', 'Keyboard', 'SGH817RFCX', 'BEXHP0CCPAP8KW', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:33:04', 'D125', 'Arjay Cobarde', '2018-09-15', 'OP298286', NULL),
-(23, 0, 'Cebu', 'Keyboard', 'SGH817RFD3', 'BEXHP0CCPAP8KX', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:33:30', NULL, NULL, NULL, NULL, NULL),
-(24, 0, 'Cebu', 'Keyboard', 'SGH817RFD4', 'BEXHP0CCPAP8L1', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:33:51', NULL, NULL, NULL, NULL, NULL),
-(25, 0, 'Cebu', 'Keyboard', 'SGH817RFCN', 'BEXHP0CCPAP8L2', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:34:14', 'D126', 'Arjay Cobarde', '2019-03-19', 'OP345462', NULL),
-(26, 0, 'Cebu', 'Keyboard', 'SGH817RFD0', 'BEXHP0CCPAP8L0', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:34:44', 'D042', 'Arjay Cobarde', '2019-01-13', 'OP329017', NULL),
-(27, 0, 'Cebu', 'Keyboard', 'SGH817RFD1', 'BEXHP0CCPAP8KZ', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:35:19', 'D065', 'Arjay Cobarde', '2019-02-03', 'OP334559', NULL),
-(28, 0, 'Cebu', 'Keyboard', 'SGH817RFD5', 'BEXHP0CCPAP8KY', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:40:22', NULL, NULL, NULL, NULL, NULL),
-(29, 0, 'Cebu', 'Keyboard', 'SGH817RFD6', 'BEXHP0CCPAP6IS', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:41:08', 'D065', 'Arjay Cobarde', '2019-02-06', 'OP335474', NULL),
-(30, 0, 'Cebu', 'Keyboard', 'SGH817RFCQ', 'BEXHP0CCPAP6IR', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:41:36', 'D038', 'Arjay Cobarde', '2018-12-01', 'OP320591', NULL),
-(31, 0, 'Cebu', 'Keyboard', 'SGH817RFCC', 'BEXHP0CCPAP6J0', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:41:59', NULL, NULL, NULL, NULL, NULL),
-(32, 0, 'Cebu', 'Keyboard', 'SGH817RFCD', 'BEXHP0CCPAP6IZ', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:43:01', 'D110', 'Arjay Cobarde', '2018-09-19', 'OP301896', NULL),
-(33, 0, 'Cebu', 'Keyboard', 'SGH817RFCF', 'BEXHP0CCPAP6IY', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:43:20', 'D122', 'Arjay Cobarde', '2019-05-03', 'OP355493', NULL),
-(34, 0, 'Cebu', 'Keyboard', 'SGH817RFD7', 'BEXHP0CCPAP0FA', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:43:43', NULL, NULL, NULL, NULL, NULL),
-(35, 0, 'Cebu', 'Keyboard', 'SGH817RFCR', 'BEXHP0CCPAP6IU', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:44:02', 'D001', 'Arjay Cobarde', '2018-01-01', 'NoTicket', NULL),
-(36, 0, 'Cebu', 'Keyboard', 'SGH817RFC9', 'BEXHP0CCPAP8JW', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:44:32', 'D084', 'Arjay Cobarde', '2019-04-03', 'OP349410', NULL),
-(37, 0, 'Cebu', 'Keyboard', 'SGH817RFCW', 'BEXHP0CCPAP8JX', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:45:00', 'D119', 'Arjay Cobarde', '2018-10-04', 'OP305859', NULL),
-(38, 0, 'Cebu', 'Keyboard', 'SGH817RFD8', 'BEXHP0CCPAP8JZ', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:45:20', 'D001', 'Arjay Cobarde', '2018-01-01', 'Noticket', NULL),
-(39, 0, 'Cebu', 'Keyboard', 'SGH817RFD2', 'BEXHP0CCPAP8JV', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:45:44', 'D113', 'Arjay Cobarde', '2019-05-01', 'OP355421', NULL),
-(40, 0, 'Cebu', 'Keyboard', 'SGH817RFD9', 'BEXHP0CCPAP8JY', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:46:07', 'D077', 'Arjay Cobarde', '2018-08-22', 'OP294348', NULL),
-(41, 0, 'Cebu', 'Keyboard', 'SGH817RFCP', 'BEXHP0CCPAP8DX', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:46:29', 'D136', 'Arjay Cobarde', '2018-09-06', 'OP298381', NULL),
-(42, 0, 'Cebu', 'Keyboard', 'SGH817RFCB', 'BEXHP0CCPAP6FH', '', '2018-05-30', 'Administrator', '2018-05-30', '10003613', 'Spare', '2019-05-13 03:46:48', NULL, NULL, NULL, NULL, NULL),
-(43, 0, 'Cebu', 'Mouse', 'SGH817RFC3', 'FCMHH0AKZAND5M', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:48:43', 'D114', 'Arjay Cobarde', '2019-01-17', 'OP330065', NULL),
-(44, 0, 'Cebu', 'Mouse', 'SGH817RFC4', 'FCMHH0AKZAND5U', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:49:04', 'D063', 'Arjay Cobarde', '2018-08-27', 'OP304332', NULL),
-(45, 0, 'Cebu', 'Mouse', 'SGH817RFCG', 'FCMHH0AKZAND60', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:49:22', 'D060', 'Arjay Cobarde', '2018-08-25', 'OP295067', NULL),
-(46, 0, 'Cebu', 'Mouse', 'SGH817RFCH', 'FCMHH0AKZAND5R', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:49:43', 'D011', 'Arjay Cobarde', '2018-07-25', 'OP287385', NULL),
-(47, 0, 'Cebu', 'Mouse', 'SGH817RFCL', 'FCMHH0AKZAND5O', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:50:14', 'D114', 'Arjay Cobarde', '2019-02-12', 'OP336663', NULL),
-(48, 0, 'Cebu', 'Mouse', 'SGH817RFCM', 'FCMHH0AKZAND5H', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:50:33', 'D-13*', 'Arjay Cobarde', '2018-06-10', 'Deployed To Cielo', NULL),
-(49, 0, 'Cebu', 'Mouse', 'SGH817RFC5', 'FCMHH0AKZAND5A', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:50:53', 'D063', 'Arjay Cobarde', '2019-02-08', 'OP335928', NULL),
-(50, 0, 'Cebu', 'Mouse', 'SGH817RFC6', 'FCMHH0AKZAND5J', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 03:51:14', 'D015', 'Arjay Cobarde', '2018-07-25', 'OP287385', NULL),
-(51, 0, 'Cebu', 'Mouse', 'SGH817RFCJ', 'FCMHH0AKZAND5G', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:13:30', 'D-4*', 'Arjay Cobarde', '2018-08-02', 'cebuitsd002', NULL),
-(52, 0, 'Cebu', 'Mouse', 'SGH817RFCK', 'FCMHH0AKZAND64', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:13:59', 'D091', 'Arjay Cobarde', '2018-01-09', 'OP328236', NULL),
-(53, 0, 'Cebu', 'Mouse', 'SGH817RFC7', 'FCMHH0AKZAND61', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:14:19', 'D003', 'Arjay Cobarde', '2018-08-06', 'OP289858', NULL),
-(54, 0, 'Cebu', 'Mouse', 'SGH817RFC8', 'FCMHH0AKZAND6A', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:14:40', 'D132', 'Arjay Cobarde', '2018-08-23', 'OP294402', NULL),
-(55, 0, 'Cebu', 'Mouse', 'SGH817RFC1', 'FCMHH0AKZAND20', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:15:02', 'D075', 'Arjay Cobarde', '2018-12-27', 'OP325498', NULL),
-(56, 0, 'Cebu', 'Mouse', 'SGH817RFCZ', 'FCMHH0AKZAND67', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:15:22', 'D109', 'Arjay Cobarde', '2019-02-20', 'OP338987', NULL),
-(57, 0, 'Cebu', 'Mouse', 'SGH817RFCT', 'FCMHH0AKZAND5B', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:15:43', 'D044', 'Arjay Cobarde', '2018-07-20', 'OP286309', NULL),
-(58, 0, 'Cebu', 'Mouse', 'SGH817RFCV', 'FCMMH0AKZAND69', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:16:00', 'D056', 'Arjay Cobarde', '2018-11-30', 'OP320519', NULL),
-(59, 0, 'Cebu', 'Mouse', 'SGH817RFCY', 'FCMHH0AKZAND5V', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:16:24', 'D127', 'Arjay Cobarde', '2019-02-27', 'OP340304', NULL),
-(60, 0, 'Cebu', 'Mouse', 'SGH817RFCS', 'FCMHH0AKZAND5F', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 04:16:50', NULL, NULL, NULL, NULL, NULL),
-(61, 0, 'Cebu', 'Mouse', 'SGH817RFBZ', 'FCMHH0AKZAND6B', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:17:10', 'D002', 'Arjay Cobarde', '2019-02-07', 'OP355755', NULL),
-(62, 0, 'Cebu', 'Mouse', 'SGH817RFC2', 'FCMHH0AKZAND5C', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:17:32', 'D-8*', 'Arjay Cobarde', '2018-06-13', 'ID PRINTER', NULL),
-(63, 0, 'Cebu', 'Mouse', 'SGH817RFC0', 'FCMHH0AKZAND5E', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:23:17', 'D061', 'Arjay Cobarde', '2019-02-20', 'IN338732', NULL),
-(64, 0, 'Cebu', 'Mouse', 'SGH817RFCX', 'FCMHH0AKZAND52', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:23:37', 'D-2*', 'Arjay Cobarde', '2018-10-11', 'Sir Jason', NULL),
-(65, 0, 'Cebu', 'Mouse', 'SGH817RFD3', 'FCMHH0AKZAND65', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:24:06', 'D115', 'Arjay Cobarde', '2018-10-05', 'OP306468', NULL),
-(66, 0, 'Cebu', 'Mouse', 'SGH817RFD4', 'FCMHH0AKZAND66', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:24:33', 'D113', 'Arjay Cobarde', '2018-12-16', 'OP321819', NULL),
-(67, 0, 'Cebu', 'Mouse', 'SGH817RFCN', 'FCMHH0AKZAND53', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:25:06', 'D071', 'Arjay Cobarde', '2018-08-21', 'OP294725', NULL),
-(68, 0, 'Cebu', 'Mouse', 'SGH817RFD0', 'FCMHH0AKZAND5S', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:25:32', 'D122', 'Arjay Cobarde', '2018-09-07', 'OP298819', NULL),
-(69, 0, 'Cebu', 'Mouse', 'SGH817RFD1', 'FCMHH0AKZAND62', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:25:53', 'D067', 'Arjay Cobarde', '2018-01-25', 'OP332318', NULL),
-(70, 0, 'Cebu', 'Mouse', 'SGH817RFD5', 'FCMMH0AKZAND68', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:26:11', 'D023', 'Arjay Cobarde', '2018-11-25', 'OP319069', NULL),
-(71, 0, 'Cebu', 'Mouse', 'SGH817RFD6', 'FCMHH0AKZND6H', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:26:37', 'D105', 'Arjay Cobarde', '2018-08-23', 'OP294652', NULL),
-(72, 0, 'Cebu', 'Mouse', 'SGH817RFCQ', 'FCMMH0AKZAND6E', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:27:03', 'D136', 'Arjay Cobarde', '2018-09-06', 'OP298381', NULL),
-(73, 0, 'Cebu', 'Mouse', 'SGH817RFCC', 'FCMHH0AKZAND5L', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:27:22', 'D128', 'Arjay Cobarde', '2018-09-08', 'OP298972', NULL),
-(74, 0, 'Cebu', 'Mouse', 'SGH817RFCD', 'FCMHH0AKZAND63', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:27:41', 'D116', 'Arjay Cobarde', '2018-10-16', 'OP308938', NULL),
-(75, 0, 'Cebu', 'Mouse', 'SGH817RFCF', 'FCMHH0AKZAND5I', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:27:58', 'D012', 'Arjay Cobarde', '2018-07-25', 'OP287385', NULL),
-(76, 0, 'Cebu', 'Mouse', 'SGH817RFD7', 'FCMHH0AAKZAND5N', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:28:25', 'D080', 'Arjay Cobarde', '2018-12-14', 'OP323821', NULL),
-(77, 0, 'Cebu', 'Mouse', 'SGH817RFCR', 'FCMHH0AKZAND6G', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:28:42', 'D-11*', 'Arjay Cobarde', '2018-01-28', 'MS Cha', NULL),
-(78, 0, 'Cebu', 'Mouse', 'SGH817RFC9', 'FCMHH0AKZAND59', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:29:02', 'D014', 'Arjay Cobarde', '2018-07-25', 'OP287388', NULL),
-(79, 0, 'Cebu', 'Mouse', 'SGH817RFCW', 'FCMHH0AKZAND6I', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:29:25', 'D019', 'Arjay Cobarde', '2018-10-23', 'OP311248', NULL),
-(80, 0, 'Cebu', 'Mouse', 'SGH817RFD8', 'FCMHH0AKZAND5P', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:29:52', 'D-12*', 'Arjay Cobarde', '2018-06-28', 'Ms Nina', NULL),
-(81, 0, 'Cebu', 'Mouse', 'SGH817RFD2', 'FCMHH0AKZAND5Y', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:30:18', 'D013', 'Arjay Cobarde', '2018-07-25', 'OP287385', NULL),
-(82, 0, 'Cebu', 'Mouse', 'SGH817RFD9', 'FCMHH0AKZAND5K', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:30:36', 'D124', 'Arjay Cobarde', '2018-07-09', 'OP283256', NULL),
-(83, 0, 'Cebu', 'Mouse', 'SGH817RFCP', 'FCMHH0AKZAND5Z', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:30:55', 'D128', 'Arjay Cobarde', '2018-10-19', 'IN310323', NULL),
-(84, 0, 'Cebu', 'Mouse', 'SGH817RFCB', 'FCMHH0AKZAND6F', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 04:31:23', 'D107', 'Arjay Cobarde', '2018-11-02', 'OP313753', NULL),
-(85, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1Q', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 04:32:12', NULL, NULL, NULL, NULL, NULL),
-(86, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1Y', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 04:32:27', NULL, NULL, NULL, NULL, NULL),
-(87, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1M', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 04:32:44', NULL, NULL, NULL, NULL, NULL),
-(88, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1L', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 04:33:02', NULL, NULL, NULL, NULL, NULL),
-(89, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1X', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 04:33:34', NULL, NULL, NULL, NULL, NULL),
-(90, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2X', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 04:33:48', NULL, NULL, NULL, NULL, NULL),
-(91, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2H', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:18:58', NULL, NULL, NULL, NULL, NULL),
-(92, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIDKO', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:19:28', NULL, NULL, NULL, NULL, NULL),
-(93, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1N', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:19:43', NULL, NULL, NULL, NULL, NULL),
-(94, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1O', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:20:03', NULL, NULL, NULL, NULL, NULL),
-(95, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1U', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:20:19', 'D076', 'Arjay Cobarde', '2019-05-22', 'IN360754', NULL),
-(96, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE20', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:20:37', NULL, NULL, NULL, NULL, NULL),
-(97, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE22', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:20:53', NULL, NULL, NULL, NULL, NULL),
-(98, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2N', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:21:15', NULL, NULL, NULL, NULL, NULL),
-(99, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2V', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:21:35', NULL, NULL, NULL, NULL, NULL),
-(100, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2O', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:21:53', 'D070', 'Arjay Cobarde', '2019-05-24', 'OP361361', NULL),
-(101, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1T', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:22:12', NULL, NULL, NULL, NULL, NULL),
-(102, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1W', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:22:26', 'D112', 'Arjay Cobarde', '2019-03-16', 'OP344717', NULL),
-(103, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1R', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:22:39', NULL, NULL, NULL, NULL, NULL),
-(104, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1S', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:22:55', NULL, NULL, NULL, NULL, NULL),
-(105, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE25', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:23:17', NULL, NULL, NULL, NULL, NULL),
-(106, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE26', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:23:34', NULL, NULL, NULL, NULL, NULL),
-(107, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2U', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:24:23', NULL, NULL, NULL, NULL, NULL),
-(108, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2S', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:24:37', NULL, NULL, NULL, NULL, NULL),
-(109, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE21', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:24:55', 'D014', 'Arjay Cobarde', '2019-03-07', 'OP342406', NULL),
-(110, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE24', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:25:09', 'D033', 'Arjay Cobarde', '2019-05-12', 'OP358170', NULL),
-(111, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2K', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:25:24', 'IT Office', 'Arjay Cobarde', '2019-04-09', 'OP505556,OP358956', NULL),
-(112, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2G', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:25:40', NULL, NULL, NULL, NULL, NULL),
-(113, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2D', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:26:00', 'D083', 'Arjay Cobarde', '2019-05-09', 'OP35720', NULL),
-(114, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2E', '', '2018-05-30', 'Arjay Cobarde', '2019-05-30', '10003613', 'Deployed', '2019-05-13 05:26:17', 'D-7*', 'Arjay Cobarde', '2019-04-20', 'OP352973', NULL),
-(115, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2L', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:26:36', 'D046', 'Arjay Cobarde', '2019-03-11', 'OP343341', NULL),
-(116, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2W', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:26:50', 'D063', 'Arjay Cobarde', '2019-04-18', 'OP352799', NULL),
-(117, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2Y', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:27:05', 'D071', 'Arjay Cobarde', '2019-04-05', 'OP349996', NULL),
-(118, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2R', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:27:20', 'D117', 'Arjay Cobarde', '2019-05-18', 'OP359736', NULL),
-(119, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2T', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:27:36', 'D110', 'Arjay Cobarde', '2019-05-01', 'OP355417', NULL),
-(120, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2A', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:27:54', 'D026', 'Administrator', '2019-05-15', 'OP358956', NULL),
-(121, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2M', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:28:11', 'D039', 'Arjay Cobarde', '2019-03-14', 'OP344129', NULL),
-(122, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1V', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Spare', '2019-05-13 05:28:25', NULL, NULL, NULL, NULL, NULL),
-(123, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1Z', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:28:38', 'D012', 'Arjay Cobarde', '2019-04-22', 'OP353134', NULL),
-(124, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE2I', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:28:51', 'D098', 'Arjay Cobarde', '2019-03-13', 'OP344017', NULL),
-(125, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE1P', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:29:05', 'D003', 'Arjay Cobarde', '2019-04-05', 'OP349876', NULL),
-(126, 0, 'Cebu', 'Mouse', '', 'FCMHH0CQWAIE27', '', '2018-05-30', 'Arjay Cobarde', '2018-05-30', '10003613', 'Deployed', '2019-05-13 05:29:23', 'D134', 'Arjay Cobarde', '2019-03-21', 'OP346034', NULL),
-(128, 0, 'Cebu', 'Headset', '', 'MSCEBHS017', '', '2018-09-10', 'Arjay Cobarde', '2018-09-10', '10004238', 'Deployed', '2019-05-21 15:49:03', 'D125', 'Arjay Cobarde', '2018-09-26', 'OP303663', NULL),
-(129, 0, 'Cebu', 'Headset', '', 'MSCEBHS018', '', '2018-09-10', 'Arjay Cobarde', '2018-09-10', '10004238 ', 'Spare', '2019-05-21 15:56:29', NULL, NULL, NULL, NULL, NULL),
-(130, 0, 'Cebu', 'Headset', '', 'MSCEBHS019', '', '2018-09-10', 'Arjay Cobarde', '2018-09-10', '10004238', 'Deployed', '2019-05-21 15:56:55', 'D-6*', 'Arjay Cobarde', '2019-05-18', 'Ticket5222019', NULL),
-(131, 0, 'Cebu', 'Headset', '', 'MSCEBHS020', '', '2018-09-10', 'Arjay Cobarde', '2018-09-10', '10004238', 'Spare', '2019-05-21 15:57:14', NULL, NULL, NULL, NULL, NULL),
-(132, 0, 'Cebu', 'Headset', '', 'MSCEBHS021', '', '2018-09-10', 'Arjay Cobarde', '2018-09-10', '10004238', 'Spare', '2019-05-21 15:57:56', NULL, NULL, NULL, NULL, NULL),
-(133, 0, 'Cebu', 'Headset', '', 'MSCEBHS022', '', '2018-09-10', 'Arjay Cobarde', '2018-09-10', '10004238', 'Spare', '2019-05-21 15:58:24', NULL, NULL, NULL, NULL, NULL),
-(134, 0, 'Cebu', 'Headset', '', 'MSCEBHS023', '', '2018-09-10', 'Arjay Cobarde', '2018-09-10', '10004238', 'Spare', '2019-05-21 15:58:49', NULL, NULL, NULL, NULL, NULL),
-(135, 0, 'Cebu', 'Headset', '', 'MSCEBHS024', '', '2018-09-10', 'Arjay Cobarde', '2018-09-10', '10004238', 'Spare', '2019-05-21 15:59:22', NULL, NULL, NULL, NULL, NULL),
-(136, 0, 'Cebu', 'Headset', '', 'MSCEBHS025', '', '2018-09-10', 'Arjay Cobarde', '2018-09-10', '10004238', 'Spare', '2019-05-21 15:59:43', NULL, NULL, NULL, NULL, NULL),
-(137, 0, 'Cebu', 'Headset', '', 'MSCEBHS026', '', '2018-09-10', 'Arjay Cobarde', '2018-09-10', '10004238', 'Spare', '2019-05-21 16:00:04', NULL, NULL, NULL, NULL, NULL),
-(138, 0, 'Cebu', 'Keyboard', '', 'SampleOnly', '', '2019-05-22', 'Arjay Cobarde', '2019-05-23', 'POSample101', 'Spare', '2019-05-22 14:36:54', 'D001', 'Arjay Cobarde', '2019-05-22', 'TicketSample101', NULL);
+INSERT INTO `account` (`id`, `year`, `purchase`, `sale`, `profit`) VALUES
+(1, 2013, 2000, 3000, 1000),
+(2, 2014, 4500, 5000, 500),
+(3, 2015, 3000, 4500, 1500),
+(4, 2016, 2000, 3000, 1000),
+(5, 2017, 2000, 4000, 2000),
+(6, 2018, 2200, 3000, 800),
+(7, 2019, 5000, 7000, 2000);
 
 -- --------------------------------------------------------
 
@@ -212,7 +69,9 @@ CREATE TABLE `asset_accesscard` (
 --
 
 INSERT INTO `asset_accesscard` (`ID`, `AccessCard`, `ReplacementCard`, `TicketId`, `Status`, `DateAdded`) VALUES
-(1, '8739699', '5889762', 'OP364640', 'Done', '2019-06-08 09:45:51');
+(4, '8739699', '5889762', 'OP364640', 'Deployed', '2019-06-23 12:49:50'),
+(5, 'test', 'test', 'test', 'Deployed', '2019-06-26 07:07:16'),
+(6, '22', '22', '22', 'Spare', '2019-06-27 08:07:18');
 
 -- --------------------------------------------------------
 
@@ -222,7 +81,6 @@ INSERT INTO `asset_accesscard` (`ID`, `AccessCard`, `ReplacementCard`, `TicketId
 
 CREATE TABLE `asset_batteries` (
   `ID` int(11) NOT NULL,
-  `DataPort` varchar(255) NOT NULL,
   `Brand` varchar(255) NOT NULL,
   `Model` varchar(255) NOT NULL,
   `SerialNumber` varchar(255) NOT NULL,
@@ -240,88 +98,87 @@ CREATE TABLE `asset_batteries` (
 -- Dumping data for table `asset_batteries`
 --
 
-INSERT INTO `asset_batteries` (`ID`, `DataPort`, `Brand`, `Model`, `SerialNumber`, `PONumber`, `UPS_AssetTag`, `UPSBrandModel`, `DeliveryDate`, `TicketNumber`, `DateInstalled`, `PerformedBy`, `Status`) VALUES
-(1, '', 'ACCU-CELL Power', '12V 7AH', '334367', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(2, '', 'ACCU-CELL Power', '12V 7AH', '334368', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(3, '', 'ACCU-CELL Power', '12V 7AH', '334369', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(4, '', 'ACCU-CELL Power', '12V 7AH', '334370', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(5, '', 'ACCU-CELL Power', '12V 7AH', '334371', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(6, '', 'ACCU-CELL Power', '12V 7AH', '334372', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(7, '', 'ACCU-CELL Power', '12V 7AH', '334373', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(8, '', 'ACCU-CELL Power', '12V 7AH', '334374', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(9, '', 'ACCU-CELL Power', '12V 7AH', '334375', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(10, '', 'ACCU-CELL Power', '12V 7AH', '334376', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(11, '', 'ACCU-CELL Power', '12V 7AH', '334377', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(12, '', 'ACCU-CELL Power', '12V 7AH', '334378', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(13, '', 'ACCU-CELL Power', '12V 7AH', '334379', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(14, '', 'ACCU-CELL Power', '12V 7AH', '334380', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(15, '', 'ACCU-CELL Power', '12V 7AH', '334381', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(16, '', 'ACCU-CELL Power', '12V 7AH', '334382', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(17, '', 'ACCU-CELL Power', '12V 7AH', '334383', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(18, '', 'ACCU-CELL Power', '12V 7AH', '334384', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(19, '', 'ACCU-CELL Power', '12V 7AH', '334385', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(20, '', 'ACCU-CELL Power', '12V 7AH', '334386', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(21, '', 'ACCU-CELL Power', '12V 7AH', '334387', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(22, '', 'ACCU-CELL Power', '12V 7AH', '334388', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(23, '', 'ACCU-CELL Power', '12V 7AH', '334389', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(24, '', 'ACCU-CELL Power', '12V 7AH', '334390', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(25, '', 'ACCU-CELL Power', '12V 7AH', '334391', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(26, '', 'ACCU-CELL Power', '12V 7AH', '334392', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(27, '', 'ACCU-CELL Power', '12V 7AH', '334393', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(28, '', 'ACCU-CELL Power', '12V 7AH', '334394', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(29, '', 'ACCU-CELL Power', '12V 7AH', '334395', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(30, '', 'ACCU-CELL Power', '12V 7AH', '334396', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(31, '', 'ACCU-CELL Power', '12V 7AH', '334397', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(32, '', 'ACCU-CELL Power', '12V 7AH', '334398', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(33, '', 'ACCU-CELL Power', '12V 7AH', '334399', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(34, '', 'ACCU-CELL Power', '12V 7AH', '334400', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(35, '', 'ACCU-CELL Power', '12V 7AH', '334401', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(36, '', 'ACCU-CELL Power', '12V 7AH', '334402', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(37, '', 'ACCU-CELL Power', '12V 7AH', '334403', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(38, '', 'ACCU-CELL Power', '12V 7AH', '334404', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(39, '', 'ACCU-CELL Power', '12V 7AH', '334405', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(40, '', 'ACCU-CELL Power', '12V 7AH', '334406', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(41, '', 'ACCU-CELL Power', '12V 7AH', '334407', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(42, '', 'ACCU-CELL Power', '12V 7AH', '334408', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(43, '', 'ACCU-CELL Power', '12V 7AH', '334409', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(44, '', 'ACCU-CELL Power', '12V 7AH', '334410', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(45, '', 'ACCU-CELL Power', '12V 7AH', '334411', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(46, '', 'ACCU-CELL Power', '12V 7AH', '334412', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
-(47, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334413', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(48, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334414', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(49, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334415', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(50, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334416', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(51, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334417', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(52, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334418', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(53, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334419', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(54, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334420', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(55, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334421', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(56, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334422', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(57, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334423', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(58, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334424', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(59, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334425', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(60, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334426', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(61, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334427', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(62, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334428', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(63, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334429', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(64, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334430', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(65, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334431', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(66, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334432', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(67, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334433', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(68, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334434', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(69, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334435', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(70, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334436', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(71, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334437', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(72, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334438', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(73, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334439', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(74, 'Electrical Room', 'ACCU-CELL Power', '12V 7AH', '334440', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(75, 'D001', 'ACCU-CELL Power', '12V 7AH', '334441', '10004795', '', '', '0000-00-00', 'OP23123', '2019-06-08', 'Arjay Cobarde', 'Deployed'),
-(76, 'D001', 'ACCU-CELL Power', '12V 7AH', '334442', '10004795', '', '', '0000-00-00', 'OP23123', '0000-00-00', 'Arjay Cobarde', 'Spare'),
-(77, 'D-20*', 'ACCU-CELL Power', '12V 7AH', '334443', '10004795_1', 'MSCEBUF14U001', '', '0000-00-00', 'sample_ticket', '2019-06-06', 'Arjay Cobarde', 'Deployed'),
-(78, 'Storage', 'ACCU-CELL Power', '12V 7AH', '334444', '10004795_1', 'MSCEBUF14u001', '', '0000-00-00', 'OP359736', '2019-06-05', 'Arjay Cobarde', 'Deployed'),
-(79, 'Storage', 'ACCU-CELL Power', '12V 7AH', '334445', '10004795', 'MSCEBUF14U001', '', '0000-00-00', 'OP359736', '2019-06-06', 'Arjay Cobarde', 'Deployed'),
-(80, 'Storage', 'ACCU-CELL Power', '12V 7AH', '334446', '10004795', 'MSCEBUF14U002', '', '0000-00-00', 'OP359736_sample', '2019-06-06', 'Arjay Cobarde', 'Deployed'),
-(83, 'Storage', 'ACCU-CELL Power', '12V 7AH', '3344432', '10004795', 'MSCEBUUPS001', '', '2019-06-04', 'OP359736', '2019-06-06', 'Arjay Cobarde', 'Spare');
+INSERT INTO `asset_batteries` (`ID`, `Brand`, `Model`, `SerialNumber`, `PONumber`, `UPS_AssetTag`, `UPSBrandModel`, `DeliveryDate`, `TicketNumber`, `DateInstalled`, `PerformedBy`, `Status`) VALUES
+(1, 'ACCU-CELL Power', '12V 7AH', '334367', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(2, 'ACCU-CELL Power', '12V 7AH', '334368', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(3, 'ACCU-CELL Power', '12V 7AH', '334369', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(4, 'ACCU-CELL Power', '12V 7AH', '334370', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(5, 'ACCU-CELL Power', '12V 7AH', '334371', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(6, 'ACCU-CELL Power', '12V 7AH', '334372', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(7, 'ACCU-CELL Power', '12V 7AH', '334373', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(8, 'ACCU-CELL Power', '12V 7AH', '334374', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(9, 'ACCU-CELL Power', '12V 7AH', '334375', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(10, 'ACCU-CELL Power', '12V 7AH', '334376', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(11, 'ACCU-CELL Power', '12V 7AH', '334377', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(12, 'ACCU-CELL Power', '12V 7AH', '334378', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(13, 'ACCU-CELL Power', '12V 7AH', '334379', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(14, 'ACCU-CELL Power', '12V 7AH', '334380', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(15, 'ACCU-CELL Power', '12V 7AH', '334381', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(16, 'ACCU-CELL Power', '12V 7AH', '334382', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(17, 'ACCU-CELL Power', '12V 7AH', '334383', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(18, 'ACCU-CELL Power', '12V 7AH', '334384', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(19, 'ACCU-CELL Power', '12V 7AH', '334385', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(20, 'ACCU-CELL Power', '12V 7AH', '334386', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(21, 'ACCU-CELL Power', '12V 7AH', '334387', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(22, 'ACCU-CELL Power', '12V 7AH', '334388', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(23, 'ACCU-CELL Power', '12V 7AH', '334389', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(24, 'ACCU-CELL Power', '12V 7AH', '334390', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(25, 'ACCU-CELL Power', '12V 7AH', '334391', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(26, 'ACCU-CELL Power', '12V 7AH', '334392', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(27, 'ACCU-CELL Power', '12V 7AH', '334393', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(28, 'ACCU-CELL Power', '12V 7AH', '334394', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(29, 'ACCU-CELL Power', '12V 7AH', '334395', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(30, 'ACCU-CELL Power', '12V 7AH', '334396', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(31, 'ACCU-CELL Power', '12V 7AH', '334397', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(32, 'ACCU-CELL Power', '12V 7AH', '334398', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(33, 'ACCU-CELL Power', '12V 7AH', '334399', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(34, 'ACCU-CELL Power', '12V 7AH', '334400', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(35, 'ACCU-CELL Power', '12V 7AH', '334401', '10004795', 'LINK14FUPSIT26218', '', '0000-00-00', 'OP370430', '2019-07-17', 'Arjay Cobarde', 'Deployed'),
+(36, 'ACCU-CELL Power', '12V 7AH', '334402', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(37, 'ACCU-CELL Power', '12V 7AH', '334403', '10004795', 'LINK14FUPSIT26218', '', '0000-00-00', 'OP370430', '2019-07-17', 'Arjay Cobarde', 'Deployed'),
+(38, 'ACCU-CELL Power', '12V 7AH', '334404', '10004795', '', '', '0000-00-00', '', '0000-00-00', '', 'Spare'),
+(39, 'ACCU-CELL Power', '12V 7AH', '334405', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(40, 'ACCU-CELL Power', '12V 7AH', '334406', '10004795', 'LINK14FUPSIT26227', '', '0000-00-00', 'OP366683', '2019-06-20', 'Arjay Cobarde', 'Deployed'),
+(41, 'ACCU-CELL Power', '12V 7AH', '334407', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(42, 'ACCU-CELL Power', '12V 7AH', '334408', '10004795', 'LINK14FUPSIT26227', '', '0000-00-00', 'OP366683', '2019-06-20', 'Arjay Cobarde', 'Deployed'),
+(43, 'ACCU-CELL Power', '12V 7AH', '334409', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(44, 'ACCU-CELL Power', '12V 7AH', '334410', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(45, 'ACCU-CELL Power', '12V 7AH', '334411', '10004795', 'LINK14FUPSIT26294', '', '0000-00-00', 'OP368047', '2019-06-23', 'Arjay Cobarde', 'Deployed'),
+(46, 'ACCU-CELL Power', '12V 7AH', '334412', '10004795', 'LINK14FUPSIT26294', '', '0000-00-00', 'OP368047', '2019-06-23', 'Arjay Cobarde', 'Deployed'),
+(47, 'ACCU-CELL Power', '12V 7AH', '334413', '10004795', 'none', '', '0000-00-00', 'None_UsedB', '0000-00-00', 'Arjay Cobarde', 'Spare'),
+(48, 'ACCU-CELL Power', '12V 7AH', '334414', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
+(49, 'ACCU-CELL Power', '12V 7AH', '334415', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(50, 'ACCU-CELL Power', '12V 7AH', '334416', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(51, 'ACCU-CELL Power', '12V 7AH', '334417', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(52, 'ACCU-CELL Power', '12V 7AH', '334418', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(53, 'ACCU-CELL Power', '12V 7AH', '334419', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(54, 'ACCU-CELL Power', '12V 7AH', '334420', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(55, 'ACCU-CELL Power', '12V 7AH', '334421', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(56, 'ACCU-CELL Power', '12V 7AH', '334422', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(57, 'ACCU-CELL Power', '12V 7AH', '334423', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(58, 'ACCU-CELL Power', '12V 7AH', '334424', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(59, 'ACCU-CELL Power', '12V 7AH', '334425', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(60, 'ACCU-CELL Power', '12V 7AH', '334426', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(61, 'ACCU-CELL Power', '12V 7AH', '334427', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(62, 'ACCU-CELL Power', '12V 7AH', '334428', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(63, 'ACCU-CELL Power', '12V 7AH', '334429', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(64, 'ACCU-CELL Power', '12V 7AH', '334430', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(65, 'ACCU-CELL Power', '12V 7AH', '334431', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(66, 'ACCU-CELL Power', '12V 7AH', '334432', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(67, 'ACCU-CELL Power', '12V 7AH', '334433', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(68, 'ACCU-CELL Power', '12V 7AH', '334434', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(69, 'ACCU-CELL Power', '12V 7AH', '334435', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(70, 'ACCU-CELL Power', '12V 7AH', '334436', '10004795', '', '', '0000-00-00', 'none', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(71, 'ACCU-CELL Power', '12V 7AH', '334437', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(72, 'ACCU-CELL Power', '12V 7AH', '334438', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Deployed'),
+(73, 'ACCU-CELL Power', '12V 7AH', '334439', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
+(74, 'ACCU-CELL Power', '12V 7AH', '334440', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
+(75, 'ACCU-CELL Power', '12V 7AH', '334441', '10004795', '', '', '0000-00-00', '', '2019-06-08', 'Arjay Cobarde', 'Spare'),
+(76, 'ACCU-CELL Power', '12V 7AH', '334442', '10004795', '', '', '0000-00-00', '', '0000-00-00', 'Arjay Cobarde', 'Spare'),
+(77, 'ACCU-CELL Power', '12V 7AH', '334443', '10004795', '', '', '0000-00-00', '', '2019-06-06', 'Arjay Cobarde', 'Spare'),
+(78, 'ACCU-CELL Power', '12V 7AH', '334444', '10004795', '', '', '0000-00-00', '', '2019-06-05', 'Arjay Cobarde', 'Spare'),
+(79, 'ACCU-CELL Power', '12V 7AH', '334445', '10004795', '', '', '0000-00-00', '', '2019-06-06', 'Arjay Cobarde', 'Spare'),
+(80, 'ACCU-CELL Power', '12V 7AH', '334446', '10004795', '', '', '0000-00-00', '', '2019-06-06', 'Arjay Cobarde', 'Spare');
 
 -- --------------------------------------------------------
 
@@ -545,6 +402,37 @@ INSERT INTO `asset_status` (`id`, `AssetStatus`, `DateCreated`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `asset_storagedevice`
+--
+
+CREATE TABLE `asset_storagedevice` (
+  `ID` int(3) NOT NULL,
+  `Brand` varchar(255) NOT NULL,
+  `Model` varchar(255) NOT NULL,
+  `SerialNumber` varchar(255) NOT NULL,
+  `Capacity` int(3) NOT NULL,
+  `Location` varchar(255) NOT NULL,
+  `MicrostatusTicket` varchar(255) NOT NULL,
+  `AddedBy` varchar(255) NOT NULL,
+  `DateUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `Status` varchar(255) DEFAULT NULL,
+  `Remarks` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `asset_storagedevice`
+--
+
+INSERT INTO `asset_storagedevice` (`ID`, `Brand`, `Model`, `SerialNumber`, `Capacity`, `Location`, `MicrostatusTicket`, `AddedBy`, `DateUpdated`, `Status`, `Remarks`) VALUES
+(1, 'Seagate', 'ST35004131', 'S2A3KWKA', 500, 'Server Room', 'OP300304', 'Arjay Cobarde', '2019-07-02 05:23:03', 'Deployed', 'Updated Location'),
+(2, 'Western Digital', 'WD3200AAJS', 'WMAV2HV43078', 320, 'Server Room', '', 'Arjay Cobarde', '2019-07-02 07:22:33', 'Spare', ''),
+(3, 'Western Digital', 'WD3200AAJS', 'WMAV2HU92541', 320, 'Server Room', '', 'Arjay Cobarde', '2019-07-02 07:24:49', 'Spare', ''),
+(4, 'Hitachi', 'HDS721050CLA662', 'JP1572FN0DM4AK', 500, 'LINK14FDESKIT25189', '', 'Arjay Cobarde', '2019-07-03 02:29:22', 'Deployed', ''),
+(5, 'Seagate', 'ST3500413AS', 'W2A6QMEL', 500, 'Server Room', '', 'Arjay Cobarde', '2019-07-08 18:09:36', 'Spare', '-Pull out from Admin PC Nina and Kim last 7/9/2019 - Arjay');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `asset_type`
 --
 
@@ -639,16 +527,16 @@ CREATE TABLE `msassets` (
 
 INSERT INTO `msassets` (`ID`, `Site`, `Floor`, `DataPort`, `AssetType`, `BundledCPU`, `Brand`, `Model`, `SerialNumber`, `Status`, `Ownership`, `OwnershipClientName`, `MicrostatusTicket`, `PONumber`, `PODate`, `DeliveryDate`, `VendorName`, `WarrantyStartDate`, `WarrantyEndDate`, `DateAdded`, `AddedBy`, `DeployedBy`, `DateUpdated`, `UpdatedBy`) VALUES
 (1, 'The Link', '14F', 'Storage', 'Keyboard', '', '', '', 'BEXHP0CCPAP6J3', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(2, 'The Link', '14F', 'Storage', 'Keyboard', '', '', '', 'BEXHP0CCPAP6J2', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
+(2, 'The Link', '14F', 'D-8*', 'Keyboard', '', '', '', 'BEXHP0CCPAP6J2', 'Deployed', 'MicroSourcing', '', 'None_UsedByArjay', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-01-01', ''),
 (3, 'The Link', '14F', 'D119', 'Keyboard', '', '', '', 'BEXHP0CCPAP6J9', 'Deployed', 'MicroSourcing', '', 'OP358118', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (4, 'The Link', '14F', 'D025', 'Keyboard', '', '', '', 'BEXHP0CCPAP6J4', 'Deployed', 'MicroSourcing', '', 'OP299018', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (5, 'The Link', '14F', 'Storage', 'Keyboard', '', '', '', 'BEXHP0CCPAP6J8', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (6, 'The Link', '14F', 'Storage', 'Keyboard', '', '', '', 'BEXHP0CCPAP6J6', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (7, 'The Link', '14F', 'Storage', 'Keyboard', '', '', '', 'BEXHP0CCPAP6J5', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (8, 'The Link', '14F', 'Storage', 'Keyboard', '', '', '', 'BEXHP0CCPAP6J7', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(9, 'The Link', '14F', 'D020', 'Keyboard', '', '', '', 'BEXHP0CCPAP8JL', 'Deployed', 'MicroSourcing', '', 'OP303950', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
+(9, 'The Link', '14F', 'Storage', 'Keyboard', '', '', '', 'BEXHP0CCPAP8JL', 'For Warranty', 'MicroSourcing', '', 'OP303950,OP369532', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-06-26', ''),
 (10, 'The Link', '14F', 'Storage', 'Keyboard', '', '', '', 'BEXHP0CCPAP8JN', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(11, 'The Link', '14F', 'Storage', 'Keyboard', '', '', '', 'BEXHP0CCPAP8JM', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
+(11, 'The Link', '14F', 'D055', 'Keyboard', '', '', '', 'BEXHP0CCPAP8JM', 'Deployed', 'MicroSourcing', '', 'OP369532', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-06-26', ''),
 (12, 'The Link', '14F', 'D132', 'Keyboard', '', '', '', 'BEXHP0CCPAP8J0', 'Deployed', 'MicroSourcing', '', 'OP286604', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (13, 'The Link', '14F', 'Storage', 'Keyboard', '', '', '', 'BEXHP0CCPAP8JG', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (14, 'The Link', '14F', 'D045', 'Keyboard', '', '', '', 'BEXHP0CCPAP8JF', 'Deployed', 'MicroSourcing', '', 'OP311337', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
@@ -671,7 +559,7 @@ INSERT INTO `msassets` (`ID`, `Site`, `Floor`, `DataPort`, `AssetType`, `Bundled
 (31, 'The Link', '14F', 'Storage', 'Keyboard', 'SGH817RFCC', '', '', 'BEXHP0CCPAP6J0', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (32, 'The Link', '14F', 'D110', 'Keyboard', 'SGH817RFCD', '', '', 'BEXHP0CCPAP6IZ', 'Deployed', 'MicroSourcing', '', 'OP301896', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (33, 'The Link', '14F', 'D122', 'Keyboard', 'SGH817RFCF', '', '', 'BEXHP0CCPAP6IY', 'Deployed', 'MicroSourcing', '', 'OP355493', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(34, 'The Link', '14F', 'Storage', 'Keyboard', 'SGH817RFD7', '', '', 'BEXHP0CCPAP0FA', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
+(34, 'The Link', '14F', 'D128', 'Keyboard', 'SGH817RFD7', '', '', 'BEXHP0CCPAP0FA', 'Deployed', 'MicroSourcing', '', 'OP364097', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-06-05', ''),
 (35, 'The Link', '14F', 'D001', 'Keyboard', 'SGH817RFCR', '', '', 'BEXHP0CCPAP6IU', 'Deployed', 'MicroSourcing', '', 'NoTicket', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (36, 'The Link', '14F', 'D084', 'Keyboard', 'SGH817RFC9', '', '', 'BEXHP0CCPAP8JW', 'Deployed', 'MicroSourcing', '', 'OP349410', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (37, 'The Link', '14F', 'D119', 'Keyboard', 'SGH817RFCW', '', '', 'BEXHP0CCPAP8JX', 'Deployed', 'MicroSourcing', '', 'OP305859', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
@@ -679,12 +567,12 @@ INSERT INTO `msassets` (`ID`, `Site`, `Floor`, `DataPort`, `AssetType`, `Bundled
 (39, 'The Link', '14F', 'D113', 'Keyboard', 'SGH817RFD2', '', '', 'BEXHP0CCPAP8JV', 'Deployed', 'MicroSourcing', '', 'OP355421', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (40, 'The Link', '14F', 'D077', 'Keyboard', 'SGH817RFD9', '', '', 'BEXHP0CCPAP8JY', 'Deployed', 'MicroSourcing', '', 'OP294348', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (41, 'The Link', '14F', 'D136', 'Keyboard', 'SGH817RFCP', '', '', 'BEXHP0CCPAP8DX', 'Deployed', 'MicroSourcing', '', 'OP298381', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(42, 'The Link', '14F', 'Storage', 'Keyboard', 'SGH817RFCB', '', '', 'BEXHP0CCPAP6FH', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
+(42, 'The Link', '14F', 'D050', 'Keyboard', 'SGH817RFCB', '', '', 'BEXHP0CCPAP6FH', 'Deployed', 'MicroSourcing', '', 'OP369531', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-06-26', ''),
 (43, 'The Link', '14F', 'D114', 'Mouse', 'SGH817RFC3', '', '', 'FCMHH0AKZAND5M', 'Deployed', 'MicroSourcing', '', 'OP330065', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (44, 'The Link', '14F', 'D063', 'Mouse', 'SGH817RFC4', '', '', 'FCMHH0AKZAND5U', 'Deployed', 'MicroSourcing', '', 'OP304332', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (45, 'The Link', '14F', 'D060', 'Mouse', 'SGH817RFCG', '', '', 'FCMHH0AKZAND60', 'Deployed', 'MicroSourcing', '', 'OP295067', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (46, 'The Link', '14F', 'D011', 'Mouse', 'SGH817RFCH', '', '', 'FCMHH0AKZAND5R', 'Deployed', 'MicroSourcing', '', 'OP287385', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(47, 'The Link', '14F', 'IT Office', 'Mouse', 'SGH817RFCL', '', '', 'FCMHH0AKZAND5O', 'For Warranty', 'MicroSourcing', '', 'OP336663,OP361422', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-05-25', ''),
+(47, 'The Link', '14F', 'D054', 'Mouse', 'SGH817RFCL', '', '', 'FCMHH0AKZAND5O', 'Deployed', 'MicroSourcing', '', 'OP336663,OP361422,OP365692', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-06-11', ''),
 (48, 'The Link', '14F', 'D-13*', 'Mouse', 'SGH817RFCM', '', '', 'FCMHH0AKZAND5H', 'Deployed', 'MicroSourcing', '', 'Deployed To Cielo', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (49, 'The Link', '14F', 'D063', 'Mouse', 'SGH817RFC5', '', '', 'FCMHH0AKZAND5A', 'Deployed', 'MicroSourcing', '', 'OP335928', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (50, 'The Link', '14F', 'D015', 'Mouse', 'SGH817RFC6', '', '', 'FCMHH0AKZAND5J', 'Deployed', 'MicroSourcing', '', 'OP287385', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
@@ -695,7 +583,7 @@ INSERT INTO `msassets` (`ID`, `Site`, `Floor`, `DataPort`, `AssetType`, `Bundled
 (55, 'The Link', '14F', 'D075', 'Mouse', 'SGH817RFC1', '', '', 'FCMHH0AKZAND20', 'Deployed', 'MicroSourcing', '', 'OP325498', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (56, 'The Link', '14F', 'D109', 'Mouse', 'SGH817RFCZ', '', '', 'FCMHH0AKZAND67', 'Deployed', 'MicroSourcing', '', 'OP338987', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (57, 'The Link', '14F', 'D044', 'Mouse', 'SGH817RFCT', '', '', 'FCMHH0AKZAND5B', 'Deployed', 'MicroSourcing', '', 'OP286309', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(58, 'The Link', '14F', 'D056', 'Mouse', 'SGH817RFCV', '', '', 'FCMMH0AKZAND69', 'Deployed', 'MicroSourcing', '', 'OP320519', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
+(58, 'The Link', '14F', 'IT Office', 'Mouse', 'SGH817RFCV', '', '', 'FCMMH0AKZAND69', 'Spare', 'MicroSourcing', '', 'OP320519,OP365905', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-06-12', ''),
 (59, 'The Link', '14F', 'D127', 'Mouse', 'SGH817RFCY', '', '', 'FCMHH0AKZAND5V', 'Deployed', 'MicroSourcing', '', 'OP340304', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (60, 'The Link', '14F', 'Storage', 'Mouse', 'SGH817RFCS', '', '', 'FCMHH0AKZAND5F', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (61, 'The Link', '14F', 'D002', 'Mouse', 'SGH817RFBZ', '', '', 'FCMHH0AKZAND6B', 'Deployed', 'MicroSourcing', '', 'OP355755', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
@@ -723,18 +611,18 @@ INSERT INTO `msassets` (`ID`, `Site`, `Floor`, `DataPort`, `AssetType`, `Bundled
 (83, 'The Link', '14F', 'D128', 'Mouse', 'SGH817RFCP', '', '', 'FCMHH0AKZAND5Z', 'Deployed', 'MicroSourcing', '', 'IN310323', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (84, 'The Link', '14F', 'D107', 'Mouse', 'SGH817RFCB', '', '', 'FCMHH0AKZAND6F', 'Deployed', 'MicroSourcing', '', 'OP313753', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (85, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE1Q', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(86, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE1Y', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(87, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE1M', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
+(86, 'The Link', '14F', 'D037', 'Mouse', '0', '', '', 'FCMHH0CQWAIE1Y', 'Deployed', 'MicroSourcing', '', 'OP366688', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-06-15', ''),
+(87, 'The Link', '14F', 'D046', 'Mouse', '0', '', '', 'FCMHH0CQWAIE1M', 'Deployed', 'MicroSourcing', '', 'OP365905', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-06-19', ''),
 (88, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE1L', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (89, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE1X', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(90, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2X', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
+(90, 'The Link', '14F', 'D092', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2X', 'Deployed', 'MicroSourcing', '', 'OP374892', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-07-16', ''),
 (91, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2H', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (92, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIDKO', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(93, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE1N', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(94, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE1O', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
+(93, 'The Link', '14F', 'D044', 'Mouse', '0', '', '', 'FCMHH0CQWAIE1N', 'Deployed', 'MicroSourcing', '', 'OP365730', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-06-12', ''),
+(94, 'The Link', '14F', 'D051', 'Mouse', '0', '', '', 'FCMHH0CQWAIE1O', 'Deployed', 'MicroSourcing', '', 'OP364705', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-05-31', ''),
 (95, 'The Link', '14F', 'D076', 'Mouse', '0', '', '', 'FCMHH0CQWAIE1U', 'Deployed', 'MicroSourcing', '', 'IN360754', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (96, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE20', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(97, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE22', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
+(97, 'The Link', '14F', 'D-14*', 'Mouse', '0', '', '', 'FCMHH0CQWAIE22', 'Deployed', 'MicroSourcing', '', 'IN360754', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-05-31', ''),
 (98, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2N', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (99, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2V', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (100, 'The Link', '14F', 'D070', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2O', 'Deployed', 'MicroSourcing', '', 'OP361361', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '0000-00-00', 'Arjay Cobarde'),
@@ -748,11 +636,11 @@ INSERT INTO `msassets` (`ID`, `Site`, `Floor`, `DataPort`, `AssetType`, `Bundled
 (108, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2S', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (109, 'The Link', '14F', 'D014', 'Mouse', '0', '', '', 'FCMHH0CQWAIE21', 'Deployed', 'MicroSourcing', '', 'OP342406', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (110, 'The Link', '14F', 'D033', 'Mouse', '0', '', '', 'FCMHH0CQWAIE24', 'Deployed', 'MicroSourcing', '', 'OP358170', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(111, 'The Link', '14F', 'D029', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2K', 'Deployed', 'MicroSourcing', '', 'OP505556,OP358956,OP364675', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-06-07', ''),
+(111, 'The Link', '14F', 'IT Office', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2K', 'Spare', 'MicroSourcing', '', 'OP505556,OP358956,OP364675', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-06-17', ''),
 (112, 'The Link', '14F', 'Storage', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2G', 'Spare', 'MicroSourcing', '', '0', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (113, 'The Link', '14F', 'D083', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2D', 'Deployed', 'MicroSourcing', '', 'OP35720', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (114, 'The Link', '14F', 'D-7*', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2E', 'Deployed', 'MicroSourcing', '', 'OP352973', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
-(115, 'The Link', '14F', 'D046', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2L', 'Deployed', 'MicroSourcing', '', 'OP343341', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
+(115, 'The Link', '14F', 'D123', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2L', 'Deployed', 'MicroSourcing', '', 'OP343341', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', 'Arjay Cobarde', '2019-06-12', ''),
 (116, 'The Link', '14F', 'D063', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2W', 'Deployed', 'MicroSourcing', '', 'OP352799', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (117, 'The Link', '14F', 'D071', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2Y', 'Deployed', 'MicroSourcing', '', 'OP349996', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
 (118, 'The Link', '14F', 'D117', 'Mouse', '0', '', '', 'FCMHH0CQWAIE2R', 'Deployed', 'MicroSourcing', '', 'OP359736', '10003613', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '', '', '0000-00-00', ''),
@@ -788,18 +676,36 @@ INSERT INTO `msassets` (`ID`, `Site`, `Floor`, `DataPort`, `AssetType`, `Bundled
 (148, 'The Link', '14F', 'Storage', 'Monitor', '', 'HP', 'ProDisplay P232', '6CM9041QY8', 'Spare', 'MicroSourcing', '', 'none', '10005459', '2019-03-22', '2019-05-04', '', '2019-04-04', '2022-05-23', '2019-05-25 00:28:22', '', 'Arjay Cobarde', '0001-01-01', ''),
 (149, 'The Link', '14F', 'Storage', 'Monitor', '', 'HP', 'ProDisplay P232', '6CM9041RBR', 'Spare', 'MicroSourcing', '', 'none', '10005459', '2019-03-22', '2019-05-04', '', '2019-04-04', '2022-05-23', '2019-05-25 00:28:22', '', '', '0000-00-00', ''),
 (150, 'The Link', '14F', 'Storage', 'Monitor', '', 'HP', 'ProDisplay P232', '6CM9041QYC', 'Spare', 'MicroSourcing', '', 'none', '10005459', '2019-03-22', '2019-05-04', '', '2019-04-04', '2022-05-23', '2019-05-25 00:28:22', '', '', '0000-00-00', ''),
-(151, 'The Link', '14F', 'Storage', 'Monitor', '', 'HP', 'ProDisplay P232', '6CM9041QY9', 'Spare', 'MicroSourcing', '', 'none', '10005459', '2019-03-22', '2019-05-04', '', '2019-04-04', '2022-05-23', '2019-05-25 00:28:22', '', '', '0000-00-00', ''),
-(152, 'The Link', '14F', 'Storage', 'Keyboard', 'Bundled Sample', 'Brand Sample', 'Brand Model', 'Brand Serial Number', 'For Warranty', '', '', '', 'POSample', '2019-05-29', '2019-05-29', 'Vendor Samle', '2019-05-29', '2019-05-24', '2019-05-28 22:11:49', 'Arjay Cobarde', '', '0000-00-00', '');
+(151, 'The Link', '14F', 'Storage', 'Monitor', '', 'HP', 'ProDisplay P232', '6CM9041QY9', 'Spare', 'MicroSourcing', '', 'none', '10005459', '2019-03-22', '2019-05-04', '', '2019-04-04', '2022-05-23', '2019-05-25 00:28:22', '', '', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `networkdowntime`
+-- Stand-in structure for view `network_chart`
 -- (See below for the actual view)
 --
-CREATE TABLE `networkdowntime` (
+CREATE TABLE `network_chart` (
 `ID` int(11)
-,`Downtime` bigint(21)
+,`Site` varchar(255)
+,`client` varchar(255)
+,`SelectISP` varchar(255)
+,`Status` varchar(255)
+,`select_circuit` varchar(255)
+,`TicketID` varchar(255)
+,`DateStarted` datetime
+,`DateRestored` datetime
+,`RFO` varchar(255)
+,`PerformedBy` varchar(255)
+,`Outage` bigint(21)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `network_chart_working`
+-- (See below for the actual view)
+--
+CREATE TABLE `network_chart_working` (
 );
 
 -- --------------------------------------------------------
@@ -859,7 +765,6 @@ CREATE TABLE `network_outage` (
   `TicketID` varchar(255) NOT NULL,
   `DateStarted` datetime NOT NULL,
   `DateRestored` datetime NOT NULL,
-  `OutageDuration` tinyint(4) NOT NULL,
   `RFO` varchar(255) NOT NULL,
   `PerformedBy` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -868,20 +773,32 @@ CREATE TABLE `network_outage` (
 -- Dumping data for table `network_outage`
 --
 
-INSERT INTO `network_outage` (`ID`, `Site`, `client`, `SelectISP`, `Status`, `select_circuit`, `TicketID`, `DateStarted`, `DateRestored`, `OutageDuration`, `RFO`, `PerformedBy`) VALUES
-(1, 'The Link', '', 'GLOBE', 'Closed', '', 'CS-10112780', '2019-01-03 02:17:00', '2019-01-03 08:24:00', 0, 'No active alarm monitored on the circuit trail, monitored with traffic', 'Administrator'),
-(2, 'The Link', '', 'GLOBE', 'Closed', '', 'NoTicket_1', '2019-03-02 05:07:00', '2019-03-02 13:11:00', 0, 'Note: Globe did not reply to our email', 'Arjay Cobarde'),
-(3, 'The Link', '', 'GLOBE', 'Closed', '', 'CS-10199342', '2019-03-06 14:59:00', '2019-03-06 23:05:00', 0, 'Circuit was initially affected by a network outage at Iloilo due to FOC Cut', 'Arjay Cobarde'),
-(4, 'The Link', '', 'GLOBE', 'Closed', '', 'CS-10204240', '2019-03-11 09:22:00', '2019-03-11 11:08:00', 0, 'No active alarm monitored with historical error', 'Arjay Cobarde'),
-(5, 'The Link', '', 'GLOBE', 'Closed', '', 'NoTicket_2', '2019-03-24 13:27:00', '2019-03-24 14:16:00', 0, 'Note: No email reply from Globe', 'Arjay Cobarde'),
-(6, 'The Link', '', 'GLOBE', 'Closed', '', 'CS-10225530', '2019-03-25 21:49:00', '2019-03-26 04:31:00', 0, ' link is currently affected by the network outage between Tektite Pasig to Makati.', 'Arjay Cobarde'),
-(7, 'The Link', '', 'GLOBE', 'Closed', '', 'CS-10254787', '2019-04-15 21:32:00', '2019-04-16 00:03:00', 0, '48core UG hit by backhoe due to ongoing road widening by DPWH project at brgy. Bantayan, SJB, Antique. ', 'Arjay Cobarde'),
-(8, 'The Link', '', 'GLOBE', 'Closed', '', 'CS-10259337', '2019-04-22 00:19:00', '2019-04-22 13:55:00', 0, 'Techno Plaza node is seen with active alarm\r\n-dummy', 'Arjay Cobarde'),
-(9, 'The Link', '', 'GLOBE', 'Closed', '', 'CS-10265591', '2019-04-25 22:31:00', '2019-04-25 23:30:00', 0, '\"RFO: Degraded signal between Makati and Paco\r\nAT: Alarms cleared prior to isolation\"', 'Arjay Cobarde'),
-(10, 'The Link', '', 'GLOBE', 'Closed', '', 'CS-10288580', '2019-05-11 01:00:00', '2019-05-11 03:00:00', 0, 'Degraded link between Paco to Makati', 'Arjay Cobarde'),
-(12, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10296630', '2019-05-17 01:55:00', '2019-05-17 05:13:00', 0, 'Circuit is initially affected by our network outage in Binan - Tiaong. 24c aerial FOC dragged by vehicle at Sto Tomas Batangas Pulling maintenance loop of FOC and re-spliced.', 'Arjay Cobarde'),
-(13, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10312985', '2019-05-25 21:05:00', '2019-05-26 13:30:00', 0, 'Seeing historical hits between Makati and PACO. Already raise to support for permanent solution. ', 'Arjay Cobarde'),
-(14, 'The Link', '', 'GLOBE', 'Closed', '446539', 'NoTicket_06042019', '2019-06-04 14:31:00', '2019-06-04 18:03:00', 0, '', 'Arjay Cobarde');
+INSERT INTO `network_outage` (`ID`, `Site`, `client`, `SelectISP`, `Status`, `select_circuit`, `TicketID`, `DateStarted`, `DateRestored`, `RFO`, `PerformedBy`) VALUES
+(1, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10112780', '2019-01-03 02:17:00', '2019-01-03 08:24:00', 'No active alarm monitored on the circuit trail, monitored with traffic', 'Administrator'),
+(2, 'The Link', '', 'GLOBE', 'Closed', '446539', 'NoTicket_1', '2019-03-02 05:07:00', '2019-03-02 13:11:00', 'Note: Globe did not reply to our email', 'Arjay Cobarde'),
+(3, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10199342', '2019-03-06 14:59:00', '2019-03-06 23:05:00', 'Circuit was initially affected by a network outage at Iloilo due to FOC Cut', 'Arjay Cobarde'),
+(4, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10204240', '2019-03-11 09:22:00', '2019-03-11 11:08:00', 'No active alarm monitored with historical error', 'Arjay Cobarde'),
+(5, 'The Link', '', 'GLOBE', 'Closed', '446539', 'NoTicket_2', '2019-03-24 13:27:00', '2019-03-24 14:16:00', 'Note: No email reply from Globe', 'Arjay Cobarde'),
+(6, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10225530', '2019-03-25 21:49:00', '2019-03-26 04:31:00', ' link is currently affected by the network outage between Tektite Pasig to Makati.', 'Arjay Cobarde'),
+(7, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10254787', '2019-04-15 21:32:00', '2019-04-16 00:03:00', '48core UG hit by backhoe due to ongoing road widening by DPWH project at brgy. Bantayan, SJB, Antique. ', 'Arjay Cobarde'),
+(8, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10259337', '2019-04-22 00:19:00', '2019-04-22 13:55:00', 'Techno Plaza node is seen with active alarm\r\n-dummy', 'Arjay Cobarde'),
+(9, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10265591', '2019-04-25 22:31:00', '2019-04-25 23:30:00', '\"RFO: Degraded signal between Makati and Paco\r\nAT: Alarms cleared prior to isolation\"', 'Arjay Cobarde'),
+(10, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10288580', '2019-05-11 01:00:00', '2019-05-11 03:00:00', 'Degraded link between Paco to Makati', 'Arjay Cobarde'),
+(12, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10296630', '2019-05-17 01:55:00', '2019-05-17 05:13:00', 'Circuit is initially affected by our network outage in Binan - Tiaong. 24c aerial FOC dragged by vehicle at Sto Tomas Batangas Pulling maintenance loop of FOC and re-spliced.', 'Arjay Cobarde'),
+(13, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10312985', '2019-05-25 21:05:00', '2019-05-26 13:30:00', 'Seeing historical hits between Makati and PACO. Already raise to support for permanent solution. ', 'Arjay Cobarde'),
+(14, 'The Link', '', 'GLOBE', 'Closed', '446539', 'NoTicket_06042019', '2019-06-04 14:31:00', '2019-06-04 18:03:00', '', 'Arjay Cobarde'),
+(15, 'The Link', '', 'GLOBE', 'Closed', '446539', 'Noticket_June9', '2019-06-09 09:09:00', '2019-06-09 10:48:00', '123123123', 'Arjay Cobarde'),
+(16, 'The Link', '', 'GLOBE', 'Closed', '446539', 'Noticket_June10', '2019-06-10 09:15:00', '2019-06-10 19:15:00', '', 'Arjay Cobarde'),
+(17, 'The Link', '', 'GLOBE', 'Closed', '446539', 'NoTicket_June11', '2019-06-11 11:10:00', '2019-06-11 12:48:00', 'No Ticket Replied Globe TSC', 'Arjay Cobarde'),
+(22, 'The Link', '', 'INFINIVAN', 'Closed', 'NET1814-200M', 'ITTN20189150145', '2018-09-15 10:21:00', '2018-09-15 13:07:00', '', 'Arjay Cobarde'),
+(23, 'The Link', '', 'INFINIVAN', 'Closed', 'NET1814-200M', 'ITTN20181060152', '2018-10-06 10:03:00', '2018-10-06 11:18:00', '', 'Arjay Cobarde'),
+(24, 'The Link', '', 'INFINIVAN', 'Closed', 'NET1814-200M', 'NoTicket_January2019', '2019-01-09 23:20:00', '2019-01-10 01:17:00', '', 'Arjay Cobarde'),
+(25, 'The Link', '', 'INFINIVAN', 'Closed', 'NET1814-200M', 'NoTicket_February2019', '2019-02-02 13:51:00', '2019-02-02 17:50:00', '', 'Arjay Cobarde'),
+(26, 'The Link', '', 'INFINIVAN', 'Closed', 'NET1814-200M', 'NoTicket_April2019', '2019-04-03 04:34:00', '2019-04-03 04:52:00', '', 'Arjay Cobarde'),
+(27, 'The Link', '', 'INFINIVAN', 'Closed', 'NET1814-200M', 'NoTicket_May2019', '2019-05-27 23:57:00', '2019-05-28 00:08:00', '', 'Arjay Cobarde'),
+(28, 'The Link', '', 'PLDT', 'Closed', 'MPI77-112011-79030', '27384669', '2018-09-21 00:19:00', '2018-09-21 10:00:00', '', 'Arjay Cobarde'),
+(29, 'The Link', '', 'PLDT', 'Closed', 'MPI77-112011-79030', '28571132', '2019-01-09 23:20:00', '2019-01-10 01:45:00', '', 'Arjay Cobarde'),
+(30, 'The Link', '', 'GLOBE', 'Closed', '446539', 'CS-10251778', '2019-04-13 06:51:00', '2019-04-13 08:44:00', '', 'Arjay Cobarde');
 
 -- --------------------------------------------------------
 
@@ -927,7 +844,7 @@ CREATE TABLE `users` (
   `user_name` varchar(255) NOT NULL,
   `user_password` varchar(255) NOT NULL,
   `user_email` varchar(255) NOT NULL,
-  `user_roles` varchar(255) DEFAULT NULL,
+  `user_roles` varchar(255) DEFAULT 'InActive',
   `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -938,11 +855,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `user_name`, `user_password`, `user_email`, `user_roles`, `reg_date`) VALUES
 (1, 'Administrator', 'ff9d61fadef920f9de831b4044446b0f', 'admin@localhost.com', 'Administrator', '2019-05-12 06:24:08'),
 (2, 'Arjay Cobarde', '42e23624daa4efec80eea1a135b79a4d', 'arjay.cobarde@microsourcing.ph', 'Administrator', '2019-05-13 03:47:38'),
-(4, 'Team XTN', '2ac9cb7dc02b3c0083eb70898e549b63', 'teamxtn@localhost.com', 'Operation Associate Specialist', '2019-05-15 17:12:19'),
 (5, 'Ed', 'ff9d61fadef920f9de831b4044446b0f', 'ed.banez@microsourcing.com', 'Administrator', '2019-05-18 00:29:36'),
 (6, 'Julie Himaya', '42f749ade7f9e195bf475f37a44cafcb', 'julie.himaya@microsourcing.ph', 'Administrator', '2019-05-18 00:31:11'),
-(14, 'wagabae', '2ac9cb7dc02b3c0083eb70898e549b63', 'wagabae@localhost.com', NULL, '2019-06-08 22:55:42'),
-(15, 'walanasadgabae', '2ac9cb7dc02b3c0083eb70898e549b63', 'walanasadgabae@localhost.com', NULL, '2019-06-08 22:56:16');
+(18, 'Sample User', '2ac9cb7dc02b3c0083eb70898e549b63', 'user@localhost.com', 'InActive', '2019-06-11 17:49:44');
 
 -- --------------------------------------------------------
 
@@ -952,7 +867,7 @@ INSERT INTO `users` (`id`, `user_name`, `user_password`, `user_email`, `user_rol
 
 CREATE TABLE `user_group` (
   `id` int(11) NOT NULL,
-  `UserRoles` varchar(255) NOT NULL,
+  `UserRoles` varchar(255) NOT NULL DEFAULT 'Inactive',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -962,17 +877,46 @@ CREATE TABLE `user_group` (
 
 INSERT INTO `user_group` (`id`, `UserRoles`, `created_at`) VALUES
 (17, 'User', '2019-05-08 18:05:06'),
-(18, 'Operation Associate Specialist', '2019-05-08 18:06:01'),
 (19, 'Administrator', '2019-05-08 18:11:59');
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `networkdowntime`
+-- Stand-in structure for view `viewassetstorage`
+-- (See below for the actual view)
 --
-DROP TABLE IF EXISTS `networkdowntime`;
+CREATE TABLE `viewassetstorage` (
+`ID` int(3)
+,`Brand` varchar(255)
+,`Model` varchar(255)
+,`SerialNumber` varchar(255)
+,`Capacity` int(3)
+,`Location` varchar(255)
+,`MicrostatusTicket` varchar(255)
+,`AddedBy` varchar(255)
+,`DateUpdated` timestamp
+,`Status` varchar(255)
+,`Remarks` text
+,`AssetTag` varchar(17)
+);
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `networkdowntime`  AS  select `network_outage`.`ID` AS `ID`,timestampdiff(HOUR,`network_outage`.`DateStarted`,`network_outage`.`DateRestored`) AS `Downtime` from `network_outage` ;
+-- --------------------------------------------------------
+
+--
+-- Structure for view `network_chart`
+--
+DROP TABLE IF EXISTS `network_chart`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `network_chart`  AS  select `network_outage`.`ID` AS `ID`,`network_outage`.`Site` AS `Site`,`network_outage`.`client` AS `client`,`network_outage`.`SelectISP` AS `SelectISP`,`network_outage`.`Status` AS `Status`,`network_outage`.`select_circuit` AS `select_circuit`,`network_outage`.`TicketID` AS `TicketID`,`network_outage`.`DateStarted` AS `DateStarted`,`network_outage`.`DateRestored` AS `DateRestored`,`network_outage`.`RFO` AS `RFO`,`network_outage`.`PerformedBy` AS `PerformedBy`,timestampdiff(HOUR,`network_outage`.`DateStarted`,`network_outage`.`DateRestored`) AS `Outage` from `network_outage` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `network_chart_working`
+--
+DROP TABLE IF EXISTS `network_chart_working`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `network_chart_working`  AS  select `network_outage`.`ID` AS `ID`,`network_outage`.`client` AS `client`,`network_outage`.`SelectISP` AS `SelectISP`,`network_outage`.`Status` AS `Status`,`network_outage`.`select_circuit` AS `select_circuit`,`network_outage`.`DateStarted` AS `DateStarted`,`network_outage`.`DateRestored` AS `DateRestored`,`network_outage`.`GlobeOutage` AS `GlobeOutage`,`network_outage`.`PldtOutage` AS `PldtOutage`,`network_outage`.`InfinivanOutage` AS `InfinivanOutage`,timestampdiff(HOUR,`network_outage`.`DateStarted`,`network_outage`.`DateRestored`) AS `Outage` from `network_outage` ;
 
 -- --------------------------------------------------------
 
@@ -983,14 +927,23 @@ DROP TABLE IF EXISTS `update_asset`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `update_asset`  AS  select `msassets`.`ID` AS `ID`,`msassets`.`DataPort` AS `DataPort`,`msassets`.`Status` AS `Status`,`msassets`.`MicrostatusTicket` AS `MicrostatusTicket`,`msassets`.`PONumber` AS `PONumber` from `msassets` ;
 
+-- --------------------------------------------------------
+
+--
+-- Structure for view `viewassetstorage`
+--
+DROP TABLE IF EXISTS `viewassetstorage`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `viewassetstorage`  AS  select `asset_storagedevice`.`ID` AS `ID`,`asset_storagedevice`.`Brand` AS `Brand`,`asset_storagedevice`.`Model` AS `Model`,`asset_storagedevice`.`SerialNumber` AS `SerialNumber`,`asset_storagedevice`.`Capacity` AS `Capacity`,`asset_storagedevice`.`Location` AS `Location`,`asset_storagedevice`.`MicrostatusTicket` AS `MicrostatusTicket`,`asset_storagedevice`.`AddedBy` AS `AddedBy`,`asset_storagedevice`.`DateUpdated` AS `DateUpdated`,`asset_storagedevice`.`Status` AS `Status`,`asset_storagedevice`.`Remarks` AS `Remarks`,concat('LINK14FHDDIT',lpad(`asset_storagedevice`.`ID`,5,'0')) AS `AssetTag` from `asset_storagedevice` ;
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `assets_old`
+-- Indexes for table `account`
 --
-ALTER TABLE `assets_old`
+ALTER TABLE `account`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1022,6 +975,12 @@ ALTER TABLE `asset_site`
 --
 ALTER TABLE `asset_status`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `asset_storagedevice`
+--
+ALTER TABLE `asset_storagedevice`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `asset_type`
@@ -1088,16 +1047,16 @@ ALTER TABLE `user_group`
 --
 
 --
--- AUTO_INCREMENT for table `assets_old`
+-- AUTO_INCREMENT for table `account`
 --
-ALTER TABLE `assets_old`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+ALTER TABLE `account`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `asset_accesscard`
 --
 ALTER TABLE `asset_accesscard`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `asset_batteries`
@@ -1122,6 +1081,12 @@ ALTER TABLE `asset_site`
 --
 ALTER TABLE `asset_status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `asset_storagedevice`
+--
+ALTER TABLE `asset_storagedevice`
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `asset_type`
@@ -1163,7 +1128,7 @@ ALTER TABLE `network_isp`
 -- AUTO_INCREMENT for table `network_outage`
 --
 ALTER TABLE `network_outage`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `network_status`
@@ -1175,7 +1140,7 @@ ALTER TABLE `network_status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `user_group`

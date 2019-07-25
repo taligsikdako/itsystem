@@ -130,6 +130,38 @@
             }
           }
 
+          function outage_pldt()
+          {
+            if($this->session->userdata('logged_in'))
+            {
+              $data['title'] = 'List of PLDT Network Outage';
+              $data['outage_pldt'] = $this->network_model->outage_pldt();
+              $this->load->view('template/header',$data);
+              $this->load->view('template/nav');
+              $this->load->view('datatable/outage_pldt',$data);
+              $this->load->view('template/footer');
+            }
+            else {
+              redirect('site');
+            }
+          }
+
+          function outage_infinivan()
+          {
+            if($this->session->userdata('logged_in'))
+            {
+              $data['title'] = 'List of INFINIVAN Network Outage';
+              $data['outage_infinivan'] = $this->network_model->outage_infinivan();
+              $this->load->view('template/header',$data);
+              $this->load->view('template/nav');
+              $this->load->view('datatable/outage_infinivan',$data);
+              $this->load->view('template/footer');
+            }
+            else {
+              redirect('site');
+            }
+          }
+
           function select_site_validate($select_site)
           {
             if($select_site =='none')

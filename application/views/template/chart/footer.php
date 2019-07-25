@@ -133,90 +133,93 @@
     <script src="<?php echo base_url().'assets/js/jquery.min.js'?>"></script>
     <script src="<?php echo base_url().'assets/js/raphael-min.js'?>"></script>
     <script src="<?php echo base_url().'assets/js/morris.min.js'?>"></script>
+    <script>
+    //Date
+    document.getElementById('date').innerHTML = Date();
+      //Graph used for Globe  | Microsourcing
+        Morris.Line({
+          element: 'graph',
+          data: <?php echo $dataGlobe;?>,
+          xkey: 'DateStarted',
+          ykeys: ['Outage'],
+          labels: ['Downtime Hours']
+        });
+        //Graph use for PLDT | Eagleview
+        Morris.Line({
+          element: 'graphPLDT',
+          data: <?php echo $dataPLDT;?>,
+          xkey: 'DateStarted',
+          ykeys: ['Outage'],
+          labels: ['Downtime Hours']
+        });
+
+        //Graph used for INFINIVAN | Eagleview
+        Morris.Line({
+          element: 'graphINFINIVAN',
+          data: <?php echo $dataINFINIVAN;?>,
+          xkey: 'DateStarted',
+          ykeys: ['Outage'],
+          labels: ['Downtime Hours']
+        });
+    </script>
+
+
+    <script type="text/javascript">
+    $('#update-password').submit(function(e) {
+    e.preventDefault();
+    var me = $(this);
+
+    // perform ajax
+    $.ajax({
+    // url: me.attr('action'),
+    url: '<?php echo base_url(); ?>user/update_password_validation',
+    type: 'post',
+    data: me.serialize(),
+    dataType: 'json',
+    success: function(response) {
+    if (response.success == true) {
+      // if success we would show message
+      // and also remove the error class
+      $('#the-message').append('<div class="alert alert-success">' +
+        '<span class="glyphicon glyphicon-ok"></span>' +
+        ' Password has been updated' +
+        '</div>');
+      $('.form-group').removeClass('has-error')
+              .removeClass('has-success');
+      $('.text-danger').remove();
+
+      // reset the form
+      me[0].reset();
+
+      // close the message after seconds
+      $('.alert-success').delay(500).show(10, function() {
+        $(this).delay(3000).hide(10, function() {
+          $(this).remove();
+
+        });
+      })
+    }
+
+    else {
+      $.each(response.messages, function(key, value) {
+        var element = $('#' + key);
+
+        element.closest('div.form-group')
+        .removeClass('has-error')
+        .addClass(value.length > 0 ? 'has-error' : 'has-success')
+        .find('.text-danger')
+        .remove();
+        element.after(value);
+      });
+    }
+    }
+    });
+    });
+
+    </script>
+
 </body>
 
-<script>
-  //Graph used for Globe  | Microsourcing
-    Morris.Line({
-      element: 'graph',
-      data: <?php echo $dataGlobe;?>,
-      xkey: 'DateStarted',
-      ykeys: ['Outage'],
-      labels: ['Downtime Hours']
-    });
-    //Graph use for PLDT | Eagleview
-    Morris.Line({
-      element: 'graphPLDT',
-      data: <?php echo $dataPLDT;?>,
-      xkey: 'DateStarted',
-      ykeys: ['Outage'],
-      labels: ['Downtime Hours']
-    });
-
-    //Graph used for INFINIVAN | Eagleview
-    Morris.Line({
-      element: 'graphINFINIVAN',
-      data: <?php echo $dataINFINIVAN;?>,
-      xkey: 'DateStarted',
-      ykeys: ['Outage'],
-      labels: ['Downtime Hours']
-    });
-</script>
-
-
-<script type="text/javascript">
-$('#update-password').submit(function(e) {
-e.preventDefault();
-var me = $(this);
-
-// perform ajax
-$.ajax({
-// url: me.attr('action'),
-url: '<?php echo base_url(); ?>user/update_password_validation',
-type: 'post',
-data: me.serialize(),
-dataType: 'json',
-success: function(response) {
-if (response.success == true) {
-  // if success we would show message
-  // and also remove the error class
-  $('#the-message').append('<div class="alert alert-success">' +
-    '<span class="glyphicon glyphicon-ok"></span>' +
-    ' Password has been updated' +
-    '</div>');
-  $('.form-group').removeClass('has-error')
-          .removeClass('has-success');
-  $('.text-danger').remove();
-
-  // reset the form
-  me[0].reset();
-
-  // close the message after seconds
-  $('.alert-success').delay(500).show(10, function() {
-    $(this).delay(3000).hide(10, function() {
-      $(this).remove();
-
-    });
-  })
-}
-
-else {
-  $.each(response.messages, function(key, value) {
-    var element = $('#' + key);
-
-    element.closest('div.form-group')
-    .removeClass('has-error')
-    .addClass(value.length > 0 ? 'has-error' : 'has-success')
-    .find('.text-danger')
-    .remove();
-    element.after(value);
-  });
-}
-}
-});
-});
-
-</script>
 
 
 

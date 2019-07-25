@@ -36,6 +36,7 @@
                       <th>Ticket</th>
                       <th>Date Started</th>
                       <th>Date Restored</th>
+                      <th>Downtime</th>
                       <th>Performed By</th>
                       <th>Action</th>
                     </tr>
@@ -56,7 +57,7 @@
                         <td><?php echo $row->TicketID; ?></td>
                         <td><?php echo $row->DateStarted; ?></td>
                         <td><?php echo $row->DateRestored; ?></td>
-
+                        <td><?php echo $row->Outage; ?></td>
                         <td><?php echo $row->PerformedBy; ?></td>
                         <td><a href="<?php echo base_url();?>network/update_downtime/<?php echo $row->ID; ?>">Update</a> | </br>
                         <a href="<?php echo base_url();?>network/new_outage/">New Outage</a>

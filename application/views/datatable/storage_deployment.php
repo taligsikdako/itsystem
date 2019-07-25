@@ -38,10 +38,10 @@
                       <th>Brand</th>
                       <th>Model</th>
                       <th>Serial Number</th>
-                      <th>Capacity</th>
+                      <th>Size</th>
                       <th>Status</th>
                       <th>Location</th>
-                      <th>Asset Tag</th>
+                      <th>Asset Tag(HDD)</th>
                       <th>Performed By</th>
 
                       <th>Action</th>

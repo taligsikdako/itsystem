@@ -73,12 +73,13 @@ function check_email_exists($email)
 				$this->form_validation->set_rules('new_password','new password','required');
 				$this->form_validation->set_rules('confirm_password','confirm password','required|matches[new_password]');
 				$this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
-				
+
 				if ($this->form_validation->run()) {
 				$data['success'] = true;
 				$email =  $this->session->userdata('user_email');
 				$password = $this->input->post('new_password');
 				$this->user_model->update_password($email,$password);
+				
 				}
 				else
 				{
@@ -87,7 +88,6 @@ function check_email_exists($email)
 					$data['messages'][$key] = form_error($key);
 				}
 				}
-
 				echo json_encode($data);
 			}
 

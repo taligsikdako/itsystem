@@ -94,7 +94,7 @@ class Site extends CI_Controller
 				// get remaining spare mouse
 				$TotalMouse = $this->report_model->get_SpareMouse(); //get_SpareKeyboard
 				$data['SpareMouse'] = $TotalMouse[0]->no;
-				// get remaining spare keybarod
+				// get remaining spare keyboard
 				$TotalKeyboard = $this->report_model->get_SpareKeyboard();
 				$data['SpareKeyboard'] = $TotalKeyboard[0]->no;
 				// Report get the overall assets inserted in the database
@@ -141,6 +141,9 @@ class Site extends CI_Controller
 
 			//
 				$data['title'] = 'Admin Dashboard';
+				$data['titlePldt'] = 'Eagleview | PLDT | CID: MPI77-112011-79030';
+				$data['titleGlobe'] = 'Microsourcing | Globe | CID: 446539';
+				$data['titleInfinivan'] = 'Eagleview | INFINIVAN | CID: NET1814-200M';
 				$data['content_title'] = 'Welcome Admin Dashboard';
 				$this->load->view('template/header',$data);
 				$this->load->view('template/nav',$data);

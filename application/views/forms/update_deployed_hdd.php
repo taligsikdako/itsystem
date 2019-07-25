@@ -114,7 +114,7 @@
                 </div>
                 <div class="form-group row">
                 <!-- <textarea class="form-control" name="name" rows="8" cols="80"></textarea> -->
-                    <label class="col-lg mb-7 mb-sm-0 small">Remarks/s</label>
+                    <label class="col-lg mb-7 mb-sm-0 small">Remarks</label>
                 <textarea class="form-control" value="" name="Remarks" rows="5" cols="75"><?php echo $row->Remarks; ?></textarea>
                 </div>
                 <div class="form-group row">
