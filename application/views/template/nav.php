@@ -100,6 +100,27 @@
       </li>
 
  <hr class="sidebar-divider">
+ <div class="sidebar-heading">
+   Reporting
+ </div>
+<!-- Reports Start -->
+<li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReports" aria-expanded="true" aria-controls="collapseTwo">
+    <i class="fas  fa-chart-line"></i>
+    <span>Reports</span>
+  </a>
+  <div id="collapseReports" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <!--  -->
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Manage Reports</h6>
+    <a class="collapse-item" href="<?php echo base_url(); ?>report/index">Reports</a>
+
+    </div>
+    </div>
+
+</li>
+
+<!-- Reports end -->
 
   <?php } ?>
 
