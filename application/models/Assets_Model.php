@@ -53,8 +53,8 @@ class Assets_Model extends CI_Model
         //Get Storage Deployment or asset storage device
         function hdd_deployment()
         {
-            $this->db->order_by('id','DESC');
-            // $this->db->order_by('DateUpdated','DESC');
+            // $this->db->order_by('id','ASC');
+            $this->db->order_by('AssetTag','DESC');
             $query = $this->db->get('viewassetstorage');
             return $query;
         }

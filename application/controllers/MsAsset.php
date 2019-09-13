@@ -316,12 +316,20 @@
 
     function list_accesscard()
     {
-      $data['get_msasset'] = $this->assets_model->list_accesscard();
-      $data['title'] = 'List of Access Card Deployed';
-      $this->load->view('template/header',$data);
-      $this->load->view('template/nav');
-      $this->load->view('datatable/list_accesscard',$data);
-      $this->load->view('template/footer');
+      if($this->session->userdata('logged_in'))
+      {
+        $data['get_msasset'] = $this->assets_model->list_accesscard();
+        $data['title'] = 'List of Access Card Deployed';
+        $this->load->view('template/header',$data);
+        $this->load->view('template/nav');
+        $this->load->view('datatable/list_accesscard',$data);
+        $this->load->view('template/footer');
+      }
+      else {
+        // code...
+        redirect('site');
+      }
+
     }
 
     function access_card_deployment()

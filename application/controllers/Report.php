@@ -9,9 +9,17 @@ class Report extends CI_Controller
 
     function index()
     {
-      $this->load->view('template/header');
-      $this->load->view('template/nav');
-      $this->load->view('pages/report');
-      $this->load->view('template/footer');
+      if($this->session->userdata('logged_in'))
+      {
+        $data['title'] = 'Report and Summary';
+        $this->load->view('template/header',$data);
+        $this->load->view('template/nav');
+        $this->load->view('pages/report');
+        $this->load->view('template/footer');
+      }
+      else {
+        redirect('site');
+      }
+
     }
 }

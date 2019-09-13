@@ -3,28 +3,63 @@
     <div class="card shadow mb-4">
 
       <div class="card-header py-3">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
-  </li>
-</ul>
+          <h6 class="m-0 font-weight-bold text-primary"><?php echo "Report"; ?></h6>
+
       </div>
     <div class="card-body">
+      <!-- Begin Report Header -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+<li class="nav-item">
+  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#office_software" role="tab" aria-controls="home" aria-selected="true">Office Software</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#monitor_deployment" role="tab" aria-controls="profile" aria-selected="false">Monitor Deployment</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" id="messages-tab" data-toggle="tab" href="#asset_deployment" role="tab" aria-controls="messages" aria-selected="false">Assets Deployment</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" id="settings-tab" data-toggle="tab" href="#ups_batteries" role="tab" aria-controls="settings" aria-selected="false">UPS Batteries</a>
+</li>
+
+</ul>
+<!-- End Report Header -->
       <div class="table-responsive">
         <div class="tab-content">
-        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">..1.</div>
-        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">..2.</div>
-        <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">..3.</div>
-        <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">..4.</div>
+        <div class="tab-pane active" id="office_software" role="tabpanel" aria-labelledby="home-tab">
+          <div class="">
+      Office Software Content
+          </div>
+      </div>
+        <div class="tab-pane" id="monitor_deployment" role="tabpanel" aria-labelledby="profile-tab">
+          <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+        </div>
+        <div class="tab-pane" id="asset_deployment" role="tabpanel" aria-labelledby="messages-tab">
+          Asset Deployment Content
+        </div>
+        <div class="tab-pane" id="ups_batteries" role="tabpanel" aria-labelledby="settings-tab">
+        UPS Batteries Content
+        </div>
       </div>
       </div>
       </div>

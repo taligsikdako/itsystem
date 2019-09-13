@@ -41,10 +41,7 @@ class Asset extends CI_Controller
         $this->form_validation->set_rules('Model','model','required');
         $this->form_validation->set_rules('SerialNumber','storage serial','required|callback_check_hddserial_exists');
         $this->form_validation->set_rules('Capacity','capacity','required');
-        // $this->form_validation->set_rules('select_installed','installed','required');
         $this->form_validation->set_rules('BundledCPU','bundled cpu','required');
-        // $this->form_validation->set_rules('MicrostatusTicket','ticket','required');
-        // $this->form_validation->set_rules('select_status','status','required');
         if($this->form_validation->run() == FALSE)
         {
           $this->load->view('template/header',$data);
@@ -55,13 +52,13 @@ class Asset extends CI_Controller
         else {
           // code...
           $data = array(
-            'Brand' => $this->input->post('Brand'),
-            'Model' => $this->input->post('Model'),
-            'SerialNumber' => $this->input->post('SerialNumber'),
-            'Capacity' => $this->input->post('Capacity'),
-
-            'Location' => $this->input->post('BundledCPU'),
-            'MicrostatusTicket' => $this->input->post('MicrostatusTicket'),
+            'Brand' => strtoupper($this->input->post('Brand')),
+            'Model' => strtoupper($this->input->post('Model')),
+            'SerialNumber' => strtoupper($this->input->post('SerialNumber')),
+            'Capacity' => strtoupper($this->input->post('Capacity')),
+//
+            'Location' => strtoupper($this->input->post('BundledCPU')),
+            'MicrostatusTicket' => strtoupper($this->input->post('MicrostatusTicket')),
             'AddedBy' => $this->session->userdata('user_name'),
             'Status' => $this->input->post('select_status'),
             'Remarks' => $this->input->post('Remarks')
@@ -109,8 +106,12 @@ class Asset extends CI_Controller
         {
 
           $data = array(
-            'Location' => $this->input->post('BundledCPU'),
-            'MicrostatusTicket' => $this->input->post('MicrostatusTicket'),
+            // 'Brand' => strtoupper($this->input->post('Brand')),
+            // 'Model' => strtoupper($this->input->post('Model')),
+            // 'SerialNumber' => strtoupper($this->input->post('SerialNumber')),
+            // 'Capacity' => strtoupper($this->input->post('Capacity')),
+            'Location' => strtoupper($this->input->post('BundledCPU')),
+            'MicrostatusTicket' => strtoupper($this->input->post('MicrostatusTicket')),
             'Status' => $this->input->post('select_status'),
             'Remarks' => $this->input->post('Remarks')
           );
