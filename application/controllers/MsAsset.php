@@ -35,7 +35,7 @@
         $data['title'] = 'Keyboard - Spare /Deployed / Defective';
         $this->load->view('template/header',$data);
         $this->load->view('template/nav');
-        $this->load->view('datatable/list_assets',$data);
+        $this->load->view('datatable/list_assets_keyboard',$data);
         $this->load->view('template/footer');
       }
       else {
@@ -53,7 +53,7 @@
         $data['title'] = 'Mices - Spare / Deployed / Defective';
         $this->load->view('template/header',$data);
         $this->load->view('template/nav');
-        $this->load->view('datatable/list_assets',$data);
+        $this->load->view('datatable/list_assets_mouse',$data);
         $this->load->view('template/footer');
       }
       else {
