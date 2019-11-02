@@ -26,7 +26,7 @@ class Site extends CI_Controller
 			else
 			{
 				$data['title'] = 'Login';
-				$data['content_title'] = 'Team XTN - IT System | Login';
+				$data['content_title'] = 'IT Assets & Management';
 				$this->load->view('template/modal/header',$data);
 				$this->load->view('login',$data);
 				$this->load->view('template/modal/footer');
@@ -37,6 +37,7 @@ class Site extends CI_Controller
 		function login(){
 		 $data['content_title'] = 'Login';
 		 $data['title'] = 'Sign In';
+		 
 
 		 $this->form_validation->set_rules('user_email','email','required|valid_email');
 		 $this->form_validation->set_rules('user_password','password','required');

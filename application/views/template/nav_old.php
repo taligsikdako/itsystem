@@ -49,15 +49,6 @@
           </div>
           <!--  -->
         </div>
-
-      </li>
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Tracker
-      </div>
-      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAssets" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-book"></i>
           <span>Assets</span>
@@ -66,12 +57,40 @@
           <!--  -->
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Manage Assets</h6>
+
+
           <a class="collapse-item" href="<?php echo base_url(); ?>msasset/assets_keyboard">Keyboard</a>
           <a class="collapse-item" href="<?php echo base_url(); ?>msasset/assets_mouse">Mouse</a>
              <a class="collapse-item" href="<?php echo base_url(); ?>msasset/ups_batteries">UPS Batteries</a>
              <a class="collapse-item" href="<?php echo base_url(); ?>asset/storage_deployment">Storage</a>
+
+
+
+
           </div>
           </div>
+      </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Tracker
+      </div>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHDD" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-hdd"></i>
+          <span>Storage</span>
+        </a>
+        <div id="collapseHDD" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Storage Drive</h6>
+              <a class="collapse-item wordwrap" href="<?php echo base_url(); ?>network/network_outage">Hard Drive</a>
+          </div>
+        </div>
+      </li> -->
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-ethernet"></i>
           <span>Network</span>
@@ -100,27 +119,6 @@
       </li>
 
  <hr class="sidebar-divider">
- <div class="sidebar-heading">
-   Reporting
- </div>
-<!-- Reports Start -->
-<li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReports" aria-expanded="true" aria-controls="collapseTwo">
-    <i class="fas  fa-chart-line"></i>
-    <span>Reports</span>
-  </a>
-  <div id="collapseReports" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-    <!--  -->
-    <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header">Manage Reports</h6>
-    <a class="collapse-item" href="<?php echo base_url(); ?>report/index">Reports</a>
-
-    </div>
-    </div>
-
-</li>
-
-<!-- Reports end -->
 
   <?php } ?>
 
@@ -141,8 +139,7 @@
 
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-            <!-- <p id="date"></p> -->
-                <span id="date"class="mr-2 d-none d-lg-inline text-gray-600 small"> </span>
+
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
