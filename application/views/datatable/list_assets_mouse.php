@@ -3,9 +3,9 @@
           <div class="card shadow mb-4">
 
             <div class="card-header py-3">
-              <a href="<?php echo base_url();?>export\export_to_csv_mouse" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Export Assets to CSV</a>
-                <a href="<?php echo base_url();?>msasset\import_msassets" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-upload fa-sm text-white-50"></i> Import Assets from CSV</a>
-                <a href="<?php echo base_url();?>assets\template\AssetsTemplate.csv" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Assets Template</a>
+            <a href="<?php echo base_url();?>export\export_to_csv_mouse" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Export</a>
+                <a href="<?php echo base_url();?>msasset\import_msassets" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-upload fa-sm text-white-50"></i> Assets</a>
+                <a href="<?php echo base_url();?>assets\template\AssetsTemplate.csv" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Template</a>
             </div>
 
             <div class="card-body">
