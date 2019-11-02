@@ -63,11 +63,11 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Mouse Deployed</div>
-                      <a href="<?php echo base_url('asset/deployed_mouse');?>"><div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $DeployedMouse; ?></div></a>
+                      <a href="<?php echo base_url('msasset/deployed_mouse');?>"><div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $DeployedMouse; ?></div></a>
 
                     </div>
                     <div class="col-auto">
-                    <a href="<?php echo base_url('asset/deployed_mouse');?>">  <i class="fas fa-mouse-pointer fa-2x text-gray-300"></i> </a>
+                    <a href="<?php echo base_url('msasset/deployed_mouse');?>">  <i class="fas fa-mouse-pointer fa-2x text-gray-300"></i> </a>
                     </div>
                   </div>
                 </div>
@@ -80,10 +80,10 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Keyboard Deployed</div>
-                    <a href="<?php echo base_url ('asset/deployed_keyboard'); ?>"><div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $DeployedKeyboard; ?></div></a>
+                    <a href="<?php echo base_url ('msasset/deployed_keyboard'); ?>"><div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $DeployedKeyboard; ?></div></a>
                     </div>
                     <div class="col-auto">
-                  <a href="<?php echo base_url ('asset/deployed_keyboard'); ?>"> <i class="fas fa-keyboard fa-2x text-gray-300"></i> </a>
+                  <a href="<?php echo base_url ('msasset/deployed_keyboard'); ?>"> <i class="fas fa-keyboard fa-2x text-gray-300"></i> </a>
                     </div>
                   </div>
                 </div>

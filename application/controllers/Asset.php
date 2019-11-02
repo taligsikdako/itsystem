@@ -281,22 +281,6 @@ class Asset extends CI_Controller
 //       }
 //     }
 //
-//     function deployed_mouse()
-//     {
-//       $data['title'] = 'Deployed Mouse';
-//       $data['deployed_mouse'] = $this->assets_model->deployed_mouse();
-//       $this->load->view('template/header');
-//       $this->load->view('template/nav');
-//       $this->load->view('asset/deployed_mouse',$data);
-//       $this->load->view('template/footer');
-//     }
+
 //
-//     function deployed_keyboard()
-//     {
-//       $data['title'] = 'Deployed Mouse';
-//       $data['deployed_keyboard'] = $this->assets_model->deployed_keyboard();
-//       $this->load->view('template/header');
-//       $this->load->view('template/nav');
-//       $this->load->view('asset/deployed_keyboard',$data);
-//       $this->load->view('template/footer');
-//     }
+  

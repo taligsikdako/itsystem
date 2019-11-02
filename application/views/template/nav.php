@@ -66,6 +66,7 @@
           <!--  -->
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Manage Assets</h6>
+          <a class="collapse-item" href="<?php echo base_url(); ?>msasset/assets_list">Assets List</a>
           <a class="collapse-item" href="<?php echo base_url(); ?>msasset/assets_keyboard">Keyboard</a>
           <a class="collapse-item" href="<?php echo base_url(); ?>msasset/assets_mouse">Mouse</a>
              <a class="collapse-item" href="<?php echo base_url(); ?>msasset/ups_batteries">UPS Batteries</a>

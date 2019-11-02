@@ -139,18 +139,18 @@ class Assets_Model extends CI_Model
 
         function deployed_mouse()
         {
-            $this->db->order_by('DateDeployed','DESC');
+            // $this->db->order_by('DateDeployed','DESC');
             $this->db->where('AssetType','Mouse');
             $this->db->where('Status','Deployed');
-            $query = $this->db->get('assets');
+            $query = $this->db->get('msassets');
             return $query;
         }
         function deployed_keyboard()
         {
-            $this->db->order_by('DateDeployed','ASC');
+      
             $this->db->where('AssetType','Keyboard');
             $this->db->where('Status','Deployed');
-            $query = $this->db->get('assets');
+            $query = $this->db->get('msassets');
             return $query;
         }
 

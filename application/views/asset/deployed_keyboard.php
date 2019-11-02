@@ -31,41 +31,20 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                    <th>Site</th>
-                    <th>Asset Type</th>
-                    <th>CPU Serial</th>
-                    <th>Serial</th>
-                    <th>New Serial</th>
-                    <th>Date Acquired</th>
-                    <th>Received By</th>
-                    <th>Date Received</th>
-                    <th>Date Deployed</th>
-                    <th>PO Number</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                     <th>Site</th>
+                      <th>Floor</th>
+                      <th>DataPort</th>
+                      <th>AssetType</th>
+                      <th>Serial Number</th>
+                      <th>Status</th>
+                      <th>Ownership</th>
+                      <th>Microstatus Ticket</th>
+                      <th>Date Updated</th>
+                      <th>Action</th>
                     <!-- <th>Action</th> -->
                     </tr>
                   </thead>
-                  <tfoot>
-                    <tr>
-
-                    <th>Site</th>
-                    <th>Asset Type</th>
-                    <th>CPU Serial</th>
-                    <th>Serial</th>
-                    <th>New Serial</th>
-                    <th>Date Acquired</th>
-                    <th>Received By</th>
-                    <th>Date Received</th>
-                    <th>Date Deployed</th>
-                    <th>PO Number</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                    <!-- <th>Action</th> -->
-
-                    </tr>
-
-                  </tfoot>
+                 
                   <tbody>
                   <?php
                     if($deployed_keyboard->num_rows() > 0)
@@ -76,21 +55,23 @@
                     <tr>
 
                         <td><?php echo $row->Site; ?></td>
+                        <td><?php echo $row->Floor; ?></td>
+                        <td><?php echo $row->DataPort; ?></td>
                         <td><?php echo $row->AssetType; ?></td>
-                        <td><?php echo $row->CPUSerialNumber; ?></td>
+
                         <td><?php echo $row->SerialNumber; ?></td>
-                        <td><?php echo $row->ReplacementSerialNumber; ?></td>
-                        <td><?php echo $row->DatePurchased; ?></td>
-                        <td><?php echo $row->ReceivedBy; ?></td>
-                        <td><?php echo $row->DateReceived; ?></td>
-                        <td><?php echo $row->DateDeployed; ?></td>
-                        <td><?php echo $row->PONumber; ?></td>
                         <td><?php echo $row->Status; ?></td>
-                        <td><a href="<?php echo base_url();?>asset/add_asset/">New Assets</a> |
-                        <a href="<?php echo base_url();?>asset/update_asset/<?php echo $row->id; ?>">Update</a>|
-                        <a href="<?php echo base_url();?>asset/asset_deployed/">Deployed</a></td>
-                        <!-- <td><a href="">Delete</a>,<a href="">Update</a></td>
-                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalUpdateUser"> Update</button></td>    -->
+                        <td><?php echo $row->Ownership; ?></td>
+
+                        <td><?php echo $row->MicrostatusTicket; ?></td>
+                        <td><?php echo $row->DateUpdated; ?></td>
+
+
+                        <td>
+                        <a href="<?php echo base_url();?>msasset/new_asset/">New Asset</a> |
+                        <a href="<?php echo base_url();?>msasset/update_asset/<?php echo $row->ID; ?>">Update</a>
+
+                        </td>
 
                       </tr>
                     <?php
@@ -104,6 +85,7 @@
                     }
                     ?>
 
+                <!-- Modal End Add New User Roles -->
 
                   </tbody>
                 </table>

@@ -9,7 +9,7 @@
       $this->load->library('form_validation');
     }
 
-    function ms_assets()
+    function assets_list()
     {
       if($this->session->userdata('logged_in'))
       {
@@ -169,7 +169,7 @@
             {
                 $this->assets_model->update_assets($data,$this->input->post('hidden_id'));
                 $this->session->set_flashdata('assets_updated','New assets has been updated successfully');
-                redirect('msasset/ms_assets');
+                redirect('msasset/assets_list');
             }
         }
         else
@@ -356,6 +356,26 @@
         redirect('site');
       }
 
+    }
+
+    function deployed_keyboard()
+    {
+      $data['title'] = 'Deployed Keyboard';
+      $data['deployed_keyboard'] = $this->assets_model->deployed_keyboard();
+      $this->load->view('template/header',$data);
+      $this->load->view('template/nav');
+      $this->load->view('asset/deployed_keyboard',$data);
+      $this->load->view('template/footer');
+      
+    }
+    function deployed_mouse()
+    {
+      $data['title'] = 'Deployed Mouse';
+      $data['deployed_mouse'] = $this->assets_model->deployed_mouse();
+      $this->load->view('template/header');
+      $this->load->view('template/nav');
+      $this->load->view('asset/deployed_mouse',$data);
+      $this->load->view('template/footer');
     }
 
 
