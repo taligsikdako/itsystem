@@ -22,7 +22,7 @@
                     <tr>
 
                       <th>Site</th>
-                      <th>Floor</th>
+                      <th>Department</th>
                       <th>DataPort</th>
                       <th>AssetType</th>
                       <th>Serial Number</th>
@@ -44,7 +44,7 @@
                     <tr>
 
                         <td><?php echo $row->Site; ?></td>
-                        <td><?php echo $row->Floor; ?></td>
+                        <td><?php echo $row->Department; ?></td>
                         <td><?php echo $row->DataPort; ?></td>
                         <td><?php echo $row->AssetType; ?></td>
 

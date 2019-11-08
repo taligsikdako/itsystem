@@ -13,8 +13,10 @@
     {
       if($this->session->userdata('logged_in'))
       {
+        /* Fetch all assets from the database */
         $data['get_msasset'] = $this->assets_model->get_msassets();
         $data['title'] = 'List of Assets';
+        $data['header_title'] = 'IT Assets';
         $this->load->view('template/header',$data);
         $this->load->view('template/nav');
         $this->load->view('datatable/list_assets',$data);
@@ -32,6 +34,7 @@
       if($this->session->userdata('logged_in'))
       {
         $data['get_msasset'] = $this->assets_model->assets_keyboard();
+        $data['header_title'] = 'IT Assets';
         $data['title'] = 'Keyboard - Spare /Deployed / Defective';
         $this->load->view('template/header',$data);
         $this->load->view('template/nav');
@@ -50,6 +53,7 @@
       if($this->session->userdata('logged_in'))
       {
         $data['get_msasset'] = $this->assets_model->assets_mouse();
+        $data['header_title'] = 'IT Assets';
         $data['title'] = 'Mices - Spare / Deployed / Defective';
         $this->load->view('template/header',$data);
         $this->load->view('template/nav');
@@ -67,6 +71,7 @@
     {
       if($this->session->userdata('logged_in'))
       {
+        $data['header_title'] = 'IT Assets';
         $data['title'] = 'Add New Assets';
         $data['getAssetType'] = $this->assets_model->get_AssetType();
         $data['GetPortLocation'] = $this->assets_model->get_DataPort();
@@ -86,6 +91,7 @@
         if($this->form_validation->run() == FALSE)
         {
           $data['title'] = ' Create New Asset';
+          $data['header_title'] = 'IT Assets';
           $this->load->view('template/header',$data);
           $this->load->view('template/nav');
           $this->load->view('forms/new_asset',$data);
@@ -124,6 +130,7 @@
     {
       if($this->session->userdata('logged_in'))
       {
+        $data['header_title'] = 'IT Assets';
         $data['title'] = "Update Assets";
         $data['content_title'] = "Update Assets";
         $user_id = $this->uri->segment(3);
@@ -181,7 +188,7 @@
 
     function import_msassets()
     {
-      $data['title'] = 'Import MS Assets here';
+      $data['title'] = 'Import Assets from a CSV File';
       $this->load->view('import/import_assets',$data);
     }
 
@@ -189,7 +196,8 @@
     {
       if($this->session->userdata('logged_in'))
       {
-
+      
+       $data['header_title'] = 'IT Assets';
       $data['title'] = 'List of UPS Batteries';
       $data['get_AssetStatus'] = $this->assets_model->get_AssetStatus();
       $data['GetPortLocation'] = $this->assets_model->get_DataPort();
@@ -210,7 +218,7 @@
       $data['battery_status'] = $this->assets_model->get_AssetStatus();
 
       $data['title'] = 'Add New Spare UPS Batteries';
-
+      $data['header_title'] = 'IT Assets';
       $this->form_validation->set_rules('Brand','brand','required');
       $this->form_validation->set_rules('Model','model','required');
       $this->form_validation->set_rules('BatterySerial','serial','required|callback_check_BatterySerial_exists');
@@ -257,6 +265,7 @@
     {
       if($this->session->userdata('logged_in'))
       {
+        $data['header_title'] = 'IT Assets';
         $data['title'] = "Update UPS Battery";
         $data['content_title'] = "Update UPS Battery";
         $user_id = $this->uri->segment(3);
@@ -316,6 +325,7 @@
 
     function list_accesscard()
     {
+      $data['header_title'] = 'IT Assets';
       $data['get_msasset'] = $this->assets_model->list_accesscard();
       $data['title'] = 'List of Access Card Deployed';
       $this->load->view('template/header',$data);
@@ -330,6 +340,7 @@
       {
         $data['getStatus'] = $this->assets_model->get_AssetStatus();
         $data['title'] = 'Access Card Deployment';
+        $data['header_title'] = 'IT Assets';
 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('access_card','access card','required');
@@ -360,6 +371,7 @@
 
     function deployed_keyboard()
     {
+      $data['header_title'] = 'IT Assets';
       $data['title'] = 'Deployed Keyboard';
       $data['deployed_keyboard'] = $this->assets_model->deployed_keyboard();
       $this->load->view('template/header',$data);
@@ -370,9 +382,10 @@
     }
     function deployed_mouse()
     {
+      $data['header_title'] = 'IT Assets';
       $data['title'] = 'Deployed Mouse';
       $data['deployed_mouse'] = $this->assets_model->deployed_mouse();
-      $this->load->view('template/header');
+      $this->load->view('template/header',$data);
       $this->load->view('template/nav');
       $this->load->view('asset/deployed_mouse',$data);
       $this->load->view('template/footer');

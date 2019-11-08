@@ -21,10 +21,9 @@
                       <th>SerialNumber</th>
                       <th>PO Number</th>
                       <th>UPS Asset Tag</th>
-                      <!-- <th>Delivery Date</th> -->
+                 
                       <th>Ticket ID</th>
-                      <th>Date Installed</th>
-                      <th>Performed By</th>
+
                       <th>Status</th>
                       <th>Action</th>
                     <!-- <th>Action</th> -->
@@ -54,8 +53,7 @@
                         <td data-target="ups_asset_tag"><?php echo $row->UPS_AssetTag; ?></td>
                         <!-- <td data-target="date_deliver"><?php// echo $row->DeliveryDate; ?></td> -->
                         <td data-target="ticketid"><?php echo $row->TicketNumber; ?></td>
-                        <td data-target="date_installed"><?php echo $row->DateInstalled; ?></td>
-                        <td data-target="PerformedBy"><?php echo $row->PerformedBy; ?></td>
+                    
                         <td data-target="select_status"><?php echo $row->Status; ?></td>
                         <td><a href="<?php echo base_url();?>msasset/new_battery/">New Battery</a> |
                         <a href="<?php echo base_url();?>msasset/update_battery/<?php echo $row->SerialNumber; ?>">Update</a> |

@@ -11,7 +11,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Team XTN <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3"><?php echo $header_title; ?></div>
       </a>
 
       <!-- Divider -->
@@ -42,6 +42,28 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Manage User </h6>
             <a class="collapse-item" href="<?php echo base_url(); ?>admin/user">Accounts</a>
+             <!-- <a class="collapse-item" href="#" data-toggle="modal" data-target="AddUsersModal">Create Account</a> -->
+            <h6 class="collapse-header">Manage User Group</h6>
+             <a class="collapse-item" href="<?php echo base_url(); ?>admin/user_group">Groups</a>
+             <!-- <a class="collapse-item" href="<?php echo base_url(); ?>admin/user_group">Create New Group</a>    -->
+          </div>
+          <!--  -->
+        </div>
+      </li>
+      <!--Asset Management -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseManageAssets" aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-tasks"></i>
+          <span>Manage Asset/s</span>
+        </a>
+        <div id="collapseManageAssets" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <!--  -->
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Asset Management </h6>
+            <a class="collapse-item" href="<?php echo base_url(); ?>admin/user">Asset New Site</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>admin/user">Asset Department</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>admin/user">Asset Type</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>admin/user">Asset Data Port</a>
              <!-- <a class="collapse-item" href="#" data-toggle="modal" data-target="AddUsersModal">Create Account</a> -->
             <h6 class="collapse-header">Manage User Group</h6>
              <a class="collapse-item" href="<?php echo base_url(); ?>admin/user_group">Groups</a>
