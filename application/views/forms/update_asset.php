@@ -58,7 +58,7 @@
            </div>
            <div class="form-group">
                 <label>Date Deployed</label>
-                <input type="date" name="date_updated" value="<?php echo $row->DateUpdated; ?>" class="form-control" />
+                <input type="date" name="date_updated" value="<?php echo $row->DateUpdated; ?>" class="form-control" require />
                 <span class="text-danger"><?php echo form_error("date_updated"); ?></span>
 
            </div>

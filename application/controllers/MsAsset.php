@@ -158,7 +158,7 @@
         $this->load->library('form_validation');
         $this->form_validation->set_rules('PONumber','po number','required');
         $this->form_validation->set_rules('ticketid','ticket id','required');
-        $this->form_validation->set_rules('date_updated','date updated','required');
+        // $this->form_validation->set_rules('date_updated','date updated','required');
 
 
         if($this->form_validation->run() == TRUE)
@@ -169,7 +169,7 @@
                 'PONumber' => $this->input->post('PONumber'),
                 'MicrostatusTicket' => $this->input->post('ticketid'),
                 'DataPort' => $this->input->post('select_port'),
-                'DateUpdated' =>$this->input->post('date_updated'),
+                // 'DateUpdated' =>$this->input->post('date_updated'),
                 'Status' => $this->input->post('select_status'),
                 'DeployedBy' => $this->session->userdata('user_name'));
             if($this->input->post('update'))
