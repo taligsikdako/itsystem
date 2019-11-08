@@ -53,7 +53,6 @@ class Site extends CI_Controller
 			 //Get and encrypt the password
 			 $password = md5($this->input->post('user_password'));
 
-
 			 //Login User
 			 $user_id = $this->user_model->login($email,$password);
 			 if($user_id){
@@ -75,6 +74,8 @@ class Site extends CI_Controller
 			 $this->session->set_flashdata('failed_login','Login is Invalid');
 			 redirect(base_url() . 'site');
 			 }
+
+			 //else end
 		 }
 	 }
 

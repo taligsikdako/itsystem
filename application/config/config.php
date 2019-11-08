@@ -24,9 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |http://intranetmsit.amberbase.eagleview.com/
 */
 // $config['base_url'] = 'http://10.103.100.141/itsystem';
-$config['base_url'] = 'http://localhost:8080/itsystem';
+// $config['base_url'] = 'http://localhost:8080/itsystem';
 // $config['base_url'] = 'http://10.50.90.2/webdev/itsystem';
-// $config['base_url'] = 'http://intranetmsit.amberbase.eagleview.com/itsystem/';
+$config['base_url'] = 'http://intranetmsit.amberbase.eagleview.com/itsystem/';
 /*
 |--------------------------------------------------------------------------
 | Index File
