@@ -9,6 +9,7 @@ class Report extends CI_Controller
 
     function index()
     {
+      $data['header_title'] = 'IT Assets';
       $data['title'] = 'Manage Reports';
       $data['content_title'] = 'Manage Report';
       $this->load->view('template/header',$data);

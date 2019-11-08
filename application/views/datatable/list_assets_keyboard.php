@@ -22,14 +22,11 @@
                     <tr>
 
                       <th>Site</th>
-                      <th>Floor</th>
-                      <th>DataPort</th>
-                      <th>AssetType</th>
+                      <th>Department</th>
+                      <th>DataPort</th>                 
                       <th>Serial Number</th>
-                      <th>Status</th>
-                      <th>Ownership</th>
-                      <th>Microstatus Ticket</th>
-                      <th>Date Updated</th>
+                      <th>Status</th>                  
+                      <th>Microstatus Ticket</th>                 
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -44,16 +41,14 @@
                     <tr>
 
                         <td><?php echo $row->Site; ?></td>
-                        <td><?php echo $row->Floor; ?></td>
-                        <td><?php echo $row->DataPort; ?></td>
-                        <td><?php echo $row->AssetType; ?></td>
-
+                        <td><?php echo $row->Department; ?></td>
+                        <td><?php echo $row->DataPort; ?></td>                    
                         <td><?php echo $row->SerialNumber; ?></td>
                         <td><?php echo $row->Status; ?></td>
-                        <td><?php echo $row->Ownership; ?></td>
+                  
 
                         <td><?php echo $row->MicrostatusTicket; ?></td>
-                        <td><?php echo $row->DateUpdated; ?></td>
+                       
 
 
                         <td>

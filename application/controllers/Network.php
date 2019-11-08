@@ -48,6 +48,7 @@
 
             if($this->session->userdata('logged_in'))
             {
+              $data['header_title'] = 'IT Assets';
               $data['title'] = 'Update Network Downtime';
               $user_id = $this->uri->segment(3);
 
@@ -101,6 +102,8 @@
           {
             if($this->session->userdata('logged_in'))
             {
+              
+              $data['header_title'] = 'IT Assets';
               $data['title'] = 'List of Network Outage';
               $data['outage'] = $this->network_model->network_outage();
               $this->load->view('template/header',$data);
@@ -118,6 +121,7 @@
           {
             if($this->session->userdata('logged_in'))
             {
+              $data['header_title'] = 'IT Assets';
               $data['title'] = 'List of Globe Network Outage';
               $data['outage_globe'] = $this->network_model->outage_globe();
               $this->load->view('template/header',$data);

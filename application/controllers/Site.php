@@ -25,6 +25,7 @@ class Site extends CI_Controller
 			}
 			else
 			{
+				$data['header_title'] = 'IT Assets';
 				$data['title'] = 'Login';
 				$data['content_title'] = 'IT Assets & Management';
 				$this->load->view('template/modal/header',$data);
@@ -142,6 +143,7 @@ class Site extends CI_Controller
 			$data['totalOutage_INFINIVAN'] = $OutageINFINIVAN[0]->no;
 
 			//
+				$data['header_title'] = 'IT Assets';
 				$data['title'] = 'Admin Dashboard';
 				$data['content_title'] = 'Welcome Admin Dashboard';
 				$this->load->view('template/header',$data);

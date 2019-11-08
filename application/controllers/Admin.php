@@ -14,9 +14,10 @@ class Admin extends CI_Controller{
         if($this->session->userdata('logged_in') != '')
         {
             $data['getUsers'] = $this->admin_model->getUsers();
+            $data['header_title'] = 'IT Assets';
             $data['title'] = 'Account Management';
             if($this->session->userdata('user_roles') == 'Administrator' /* || $this->session->userdata('user_roles') == 'Operation' */)
-            {
+            {   
                 $this->load->view('template/header',$data);
                 $this->load->view('template/nav');
                 $this->load->view('admin/user',$data);
@@ -71,6 +72,7 @@ class Admin extends CI_Controller{
     {
             $data["user_type"] = $this->admin_model->get_usertype();
             $data['title'] = 'Manage User Groups';
+            $data['header_title'] = 'IT Assets';
                 if($this->session->userdata('user_roles')=='Administrator')
                 {
                 $this->load->view('template/header',$data);

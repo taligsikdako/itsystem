@@ -18,6 +18,7 @@ class Asset extends CI_Controller
     {
       if($this->session->userdata('logged_in'))
       {
+        $data['header_title'] = 'IT Assets';
         $data['hdd_deployment'] = $this->assets_model->hdd_deployment();
         $data['title'] = ' Hard Disk Deployment Tracker';
         $this->load->view('template/header',$data);
@@ -34,6 +35,7 @@ class Asset extends CI_Controller
     {
       if($this->session->userdata('logged_in'))
       {
+        $data['header_title'] = 'IT Assets';
         $data['title'] = 'Deployed Storage Device/s';
         $data['content_title'] = 'Deployed Storage Device/s';
         $data['storage_drive_status'] = $this->assets_model->storage_drive_status();
@@ -92,6 +94,7 @@ class Asset extends CI_Controller
     {
       if($this->session->userdata('logged_in'))
       {
+        $data['header_title'] = 'IT Assets';
         $data['title'] = 'Update Deployed Storage Drive';
         $data['content_title'] = 'Update Deployed Storage Drive';
         $hdd_user_id = $this->uri->segment(3);

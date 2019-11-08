@@ -36,14 +36,12 @@
                   <thead>
                     <tr>
                       <th>Brand</th>
-                      <th>Model</th>
+              
                       <th>Serial Number</th>
-                      <th>Capacity</th>
+                
                       <th>Status</th>
                       <th>Location</th>
                       <th>Asset Tag</th>
-                      <th>Performed By</th>
-
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -57,13 +55,12 @@
                     ?>
                     <tr>
                         <td><?php echo $row->Brand; ?></td>
-                        <td><?php echo $row->Model; ?></td>
+                   
                         <td><?php echo $row->SerialNumber; ?></td>
-                        <td><?php echo $row->Capacity; ?></td>
+                      
                         <td><?php echo $row->Status; ?></td>
                         <td><?php echo $row->Location; ?></td>
                         <td><?php echo $row->AssetTag; ?></td>
-                        <td><?php echo $row->AddedBy; ?></td>
 
                         <td><a href="<?php echo base_url();?>asset/deployed_hdd">New</a> |
                         <a href="<?php echo base_url();?>asset/update_deployed_hdd/<?php echo $row->ID; ?>">Update</a>
