@@ -37,14 +37,16 @@ class Admin extends CI_Controller{
     public function update_account($id)
     {
         $data['title'] = "Account Update";
+        $data['header_title'] = "IT ASSETS";
+        
         $user_id = $this->uri->segment(3);
         $data["get_usergroup"] = $this->user_model->get_usergroup();
 
         $this->load->model('admin_model');
         $data['fetch_single_user'] = $this->admin_model->fetch_single_user($user_id);
         $data['fetch_users'] = $this->admin_model->getUsers();
-        $this->load->view('template/header');
-        $this->load->view('template/nav');
+        $this->load->view('template/header',$data);
+        $this->load->view('template/nav',$data);
         $this->load->view('admin/update_account',$data);
         $this->load->view('template/footer');
     }
